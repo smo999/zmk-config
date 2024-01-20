@@ -40,10 +40,10 @@
 
         Nav {
             bindings = <
-&trans      &trans     &trans      &trans       &trans    &trans  &trans    &kp UP_ARROW  &trans     &trans
-&trans      &trans     &trans      &trans       &trans    &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans
-&kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans    &trans        &trans     &trans
-&trans      &trans                                                                        &trans     &trans
+&trans      &trans     &trans      &trans       &trans    &trans  &trans    &kp UP    &trans     &trans
+&trans      &trans     &trans      &trans       &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans    &trans    &trans     &trans
+&trans      &trans                                                                    &trans     &trans
             >;
         };
 
