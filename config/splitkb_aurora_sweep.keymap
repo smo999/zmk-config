@@ -25,7 +25,7 @@
 &kp ESC      &kp BSPC    &kp TAB      &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
 &mt LCTRL A  &mt LALT O  &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
 &kp SPACE    &kp Q       &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
-&mo 1        &mo 0                                                                         &lt 0 RET   &lt 1 SPACE
+&mo 1        &mo 3                                                                         &lt 1 RET   &lt 1 SPACE
             >;
         };
 
@@ -38,7 +38,7 @@
             >;
         };
 
-        layer_2 {
+        Nav {
             bindings = <
 &trans      &trans     &trans      &trans       &trans    &trans  &trans    &kp UP_ARROW  &trans     &trans
 &trans      &trans     &trans      &trans       &trans    &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans
