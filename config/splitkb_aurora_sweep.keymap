@@ -10,52 +10,14 @@
 
 
 &mt {
-  //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
 };
 
 / {
 
     combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-         combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-
-            combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        };
-
-                    combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };
-
-                           combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-
-
-       combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-
-
 
     };
 
@@ -65,7 +27,7 @@
             default_layer {
         bindings = <
         &kp ESC     &kp BSPC    &kp TAB     &kp P       &kp Y               &kp F       &kp G       &kp C       &kp R       &kp L
-        &mt LCTRL A &mt LALT O  &mt LSFT E  &mt LGUI I  &kp U               &kp D       &kp H       &kp T       &kp N       &kp S
+        &mt LCTRL A &mt LALT O  &mt LSFT E  &mt LGUI I  &kp U               &mt D       &mt RGUI H  &mt RSFT T  &mt RALT N  &mt RCTRL S
         &mt LSFT Z  &kp Q       &kp J       &kp K       &kp X               &kp B       &kp M       &kp W       &kp V       &kp Z
                                             &mo 1       &mo 3               &mt 2 RET   &mt 3 SPC
         >;
@@ -73,10 +35,10 @@
 
             left_layer {
         bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5     &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0
-        &kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH         &kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL
-        &kp ESC    &kp TILDE    &kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2     &kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL
-                        &mo 1  &kp LGUI                     &kp RGUI &mo 2
+        &kp LT      &kp LBKT        &kp LBRC        &kp LPAR        &kp AT      &kp EQUAL       &kp RPAR        &kp RBRC        &kp RBKT        &kp GT
+        &kp APOS    &kp COMMA       &kp DOT         &kp MINUS       &kp AMP     &kp DOLLAR      &kp QMARK       &kp EXCL        &kp PRCNT       &kp HASH
+        &kp DQT     &kp SEMI        &kp COLON       &kp UNDER       &kp CARET   &trans          &kp FSLH        &kp PIPE        &kp RSLH        &kp trans 
+                                                    &trans          &trans      &trans          &trans
         >;
         };
 
