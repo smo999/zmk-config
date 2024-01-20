@@ -5,11 +5,10 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define SMB 1
-
 
 &mt {
     flavor = "tap-preferred";
@@ -17,50 +16,45 @@
 };
 
 / {
+    combos { compatible = "zmk,combos"; };
 
-    combos {
-        compatible = "zmk,combos";
+    keymap {
+        compatible = "zmk,keymap";
 
-    };
-
-        keymap {
-                compatible = "zmk,keymap";
-
-            default_layer {
-        bindings = <
-        &kp ESC     &kp BSPC    &kp TAB     &kp P       &kp Y               &kp F       &kp G       &kp C       &kp R       &kp L
-        &mt LCTRL A &mt LALT O  &mt LSFT E  &mt LGUI I  &kp U               &mt D       &mt RGUI H  &mt RSFT T  &mt RALT N  &mt RCTRL S
-        &mt LSFT Z  &kp Q       &kp J       &kp K       &kp X               &kp B       &kp M       &kp W       &kp V       &kp Z
-                                            &mo 1       &mo 3               &mt SMB RET &mt 3 SPC
-        >;
+        default_layer {
+            bindings = <
+&kp ESC      &kp BSPC    &kp TAB      &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
+&mt LCTRL A  &mt LALT O  &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
+&kp SPACE    &kp Q       &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
+&mo 1        &mo 3                                                                         &lt 2 RET   &lt 1 SPACE
+            >;
         };
 
         left_layer {
-        bindings = <
-        &kp LT      &kp LBKT        &kp LBRC        &kp LPAR        &kp AT      &kp EQUAL       &kp RPAR        &kp RBRC        &kp RBKT        &kp GT
-        &kp APOS    &kp COMMA       &kp DOT         &kp MINUS       &kp AMPS    &kp DOLLAR      &kp QMARK       &kp EXCL        &kp PRCNT       &kp HASH
-        &kp DQT     &kp SEMI        &kp COLON       &kp UNDER       &kp CARET   &trans          &kp FSLH        &kp PIPE        &kp RSLH        &kp trans 
-                                                    &trans          &trans      &trans          &trans
-        >;
+            bindings = <
+&kp LT    &kp LBKT   &kp LBRC   &kp LPAR   &kp AT       &kp EQUAL   &kp RPAR   &kp RBRC  &kp RBKT   &kp GT
+&kp APOS  &kp COMMA  &kp DOT    &kp MINUS  &kp AMPS     &kp DOLLAR  &kp QMARK  &kp EXCL  &kp PRCNT  &kp HASH
+&kp DQT   &kp SEMI   &kp COLON  &kp UNDER  &kp CARET    &trans      &kp FSLH   &kp PIPE  &kp BSLH   &trans
+&trans    &trans                                                                         &trans     &trans
+            >;
         };
 
         right_layer {
-        bindings = <
-        &kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT             &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN
-        &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN           &kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
-        &kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH             &kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-                      &mo 3 &kp LCTL                &kp SPC  &mo 2
-        >;
+            bindings = <
+&kp BANG  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
+&kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
+&kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
+&mo 3     &kp LCTL                                                                      &kp SPC   &mo 2
+            >;
         };
 
         tri_layer {
-        bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5             &trans &trans   &trans   &trans  &trans
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                          &trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans
-        &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7                 &trans &kp PG_DN  &kp K_VOL_DN  &trans &trans
-                     &trans &trans                      &trans &trans
-        >;
+            bindings = <
+&trans      &trans      &trans      &trans  &trans    &trans  &trans     &trans        &trans      &trans
+&kp F1      &kp F2      &kp F3      &kp F4  &kp F5    &trans  &kp PG_UP  &kp K_VOL_UP  &kp K_MUTE  &trans
+&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6  &kp F7    &trans  &kp PG_DN  &kp K_VOL_DN  &trans      &trans
+&trans      &trans                                                                     &trans      &trans
+            >;
         };
-
     };
 };
