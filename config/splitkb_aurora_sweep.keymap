@@ -15,7 +15,14 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <12 17>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -25,7 +32,7 @@
 &kp ESC      &kp BSPC    &kp TAB      &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
 &mt LCTRL A  &mt LALT O  &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
 &kp SPACE    &kp Q       &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
-&mo 1        &mo 3                                                                         &lt 1 RET   &lt 1 SPACE
+&mo 1        &to 3                                                                         &lt 1 RET   &lt 2 SPACE
             >;
         };
 
@@ -52,7 +59,7 @@
 &trans  &trans     &trans   &trans     &trans    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp STAR
 &trans  &kp COMMA  &kp DOT  &kp MINUS  &trans    &trans     &kp N4  &kp N5  &kp N6  &kp PLUS
 &trans  &trans     &trans   &trans     &trans    &trans     &kp N1  &kp N2  &kp N3  &kp FSLH
-&trans  &trans                                                              &trans  &kp N0
+&trans  &to 0                                                               &trans  &kp N0
             >;
         };
     };
