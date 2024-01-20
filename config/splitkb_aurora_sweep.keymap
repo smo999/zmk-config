@@ -38,7 +38,7 @@
         left_layer {
         bindings = <
         &kp LT      &kp LBKT        &kp LBRC        &kp LPAR        &kp AT      &kp EQUAL       &kp RPAR        &kp RBRC        &kp RBKT        &kp GT
-        &kp APOS    &kp COMMA       &kp DOT         &kp MINUS       &kp AMP     &kp DOLLAR      &kp QMARK       &kp EXCL        &kp PRCNT       &kp HASH
+        &kp APOS    &kp COMMA       &kp DOT         &kp MINUS       &kp AMPS    &kp DOLLAR      &kp QMARK       &kp EXCL        &kp PRCNT       &kp HASH
         &kp DQT     &kp SEMI        &kp COLON       &kp UNDER       &kp CARET   &trans          &kp FSLH        &kp PIPE        &kp RSLH        &kp trans 
                                                     &trans          &trans      &trans          &trans
         >;
