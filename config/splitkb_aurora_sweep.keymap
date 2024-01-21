@@ -115,10 +115,10 @@
 
         Symbols {
             bindings = <
-&less_greater_than  &brackets  &braces          &pars      &kp AT       &kp EQUAL      &kp RPAR   &kp RBRC  &kp RBKT   &kp GT
-&kp APOS            &kp COMMA  &kp EXCLAMATION  &kp SLASH  &kp GRAVE    &kp DOLLAR     &kp QMARK  &kp EXCL  &kp PRCNT  &kp HASH
-&kp DQT             &kp SEMI   &kp COLON        &kp UNDER  &kp CARET    &kp AMPERSAND  &kp FSLH   &kp PIPE  &kp BSLH   &trans
-&trans              &trans                                                                                  &trans     &trans
+&less_greater_than  &brackets      &braces           &pars           &kp AT           &kp EQUAL      &kp RPAR                &kp RBRC         &kp RBKT          &kp GT
+&mt LCTRL AMPS      &mt LALT EXCL  &mt LSHIFT MINUS  &mt LGUI SLASH  &kp BACKSLASH    &kp DOLLAR     &mt RIGHT_GUI QUESTION  &mt RSHIFT EXCL  &mt RALT PERCENT  &mt RCTRL HASH
+&kp DQT             &kp SEMI       &kp HASH          &kp PERCENT     &kp CARET        &kp AMPERSAND  &kp FSLH                &kp PIPE         &kp BSLH          &trans
+&trans              &trans                                                                                                                    &trans            &trans
             >;
         };
 
