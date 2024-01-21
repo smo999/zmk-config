@@ -16,12 +16,79 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    combos { compatible = "zmk,combos"; };
 
-        caps_word {
-            bindings = <&caps_word>;
-            key-positions = <12 17>;
+    macros {
+        delete_word: delete_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(LEFT)) &kp BACKSPACE>;
+            label = "DELETE_WORD";
+        };
+    };
+
+    behaviors {
+        dot_colon: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_COLON";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        comma_semicolon: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_SEMICOLON";
+            bindings = <&kp COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        pars: pars {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PARS";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        brackets: brackets {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACKETS";
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        braces: braces {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACES";
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        less_greater_than: less_greater_than {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LESS_GREATER_THAN";
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        grave_hat: grave_hat {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GRAVE_HAT";
+            bindings = <&kp GRAVE>, <&kp CARET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -30,37 +97,37 @@
 
         default_layer {
             bindings = <
-&kp ESC          &kp BSPC    &kp TAB      &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
-&mt LCTRL A      &mt LALT O  &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
-&kp SPACE        &kp Q       &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
-&lt 3 BACKSPACE  &to 1                                                                         &lt 2 RET   &lt 3 SPACE
+&kp APOS         &comma_semicolon  &dot_colon   &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
+&mt LCTRL A      &mt LALT O        &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
+&grave_hat       &kp Q             &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
+&lt 3 BACKSPACE  &to 1                                                                               &lt 2 RET   &lt 3 SPACE
             >;
         };
 
         Numbers {
             bindings = <
-&to 4   &trans     &trans   &trans     &trans    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp STAR
-&trans  &kp COMMA  &kp DOT  &kp MINUS  &trans    &trans     &kp N4  &kp N5  &kp N6  &kp PLUS
-&trans  &trans     &trans   &trans     &trans    &trans     &kp N1  &kp N2  &kp N3  &kp FSLH
-&trans  &to 0                                                               &trans  &kp N0
+&to 4   &trans  &trans  &trans  &trans    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp STAR
+&trans  &trans  &trans  &trans  &trans    &trans     &kp N4  &kp N5  &kp N6  &kp PLUS
+&trans  &trans  &trans  &trans  &trans    &trans     &kp N1  &kp N2  &kp N3  &kp FSLH
+&trans  &to 0                                                        &trans  &kp N0
             >;
         };
 
         Symbols {
             bindings = <
-&kp LT    &kp LBKT   &kp LBRC   &kp LPAR   &kp AT       &kp EQUAL      &kp RPAR   &kp RBRC  &kp RBKT   &kp GT
-&kp APOS  &kp COMMA  &kp DOT    &kp MINUS  &kp GRAVE    &kp DOLLAR     &kp QMARK  &kp EXCL  &kp PRCNT  &kp HASH
-&kp DQT   &kp SEMI   &kp COLON  &kp UNDER  &kp CARET    &kp AMPERSAND  &kp FSLH   &kp PIPE  &kp BSLH   &trans
-&trans    &trans                                                                            &trans     &trans
+&less_greater_than  &brackets  &braces          &pars      &kp AT       &kp EQUAL      &kp RPAR   &kp RBRC  &kp RBKT   &kp GT
+&kp APOS            &kp COMMA  &kp EXCLAMATION  &kp SLASH  &kp GRAVE    &kp DOLLAR     &kp QMARK  &kp EXCL  &kp PRCNT  &kp HASH
+&kp DQT             &kp SEMI   &kp COLON        &kp UNDER  &kp CARET    &kp AMPERSAND  &kp FSLH   &kp PIPE  &kp BSLH   &trans
+&trans              &trans                                                                                  &trans     &trans
             >;
         };
 
         Nav {
             bindings = <
-&trans      &trans     &trans      &trans       &trans    &trans  &trans    &kp UP    &trans     &trans
-&trans      &trans     &trans      &trans       &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-&kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans    &trans    &trans     &trans
-&trans      &trans                                                                    &trans     &trans
+&kp ESCAPE    &trans     &kp TAB     &trans       &trans    &trans  &trans    &kp UP    &trans     &trans
+&trans        &trans     &trans      &trans       &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&kp K_UNDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans    &trans    &trans     &trans
+&delete_word  &trans                                                                    &trans     &trans
             >;
         };
 
