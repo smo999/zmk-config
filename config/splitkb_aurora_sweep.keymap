@@ -100,7 +100,7 @@
 &kp APOS         &comma_semicolon  &dot_colon   &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
 &mt LCTRL A      &mt LALT O        &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
 &grave_hat       &kp Q             &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
-&lt 3 BACKSPACE  &to 1                                                                               &lt 2 RET   &lt 3 SPACE
+&lt 3 BACKSPACE  &to 2                                                                               &lt 2 RET   &lt 3 SPACE
             >;
         };
 
@@ -115,10 +115,10 @@
 
         Symbols {
             bindings = <
-&less_greater_than  &brackets      &braces           &pars           &kp AT           &kp EQUAL     &kp N7  &kp N8  &kp N9  &kp STAR
-&mt LCTRL AT        &mt LALT EXCL  &mt LSHIFT MINUS  &mt LGUI SLASH  &kp BACKSLASH    &kp N0        &mt RIGHT_GUI N4  &mt RSHIFT N5  &mt RALT N6  &trans
-&kp AMPS            &kp SEMI       &kp EQUAL         &kp PERCENT     &kp DOLLAR       &kp N0        &kp N1  &kp N2  &kp N3  &kp FSLH
-&trans              &trans                                                                                                                    &trans            &trans
+&less_greater_than  &brackets      &braces           &pars            &kp AT           &kp EQUAL  &kp N7            &kp N8         &kp N9       &kp STAR
+&mt LCTRL AT        &mt LALT EXCL  &mt LSHIFT MINUS  &mt LGUI SLASH   &kp BACKSLASH    &kp N0     &mt RIGHT_GUI N4  &mt RSHIFT N5  &mt RALT N6  &kp PLUS
+&kp AMPS            &kp PERCENT    &kp EQUAL         &kp NON_US_HASH  &kp DOLLAR       &kp N0     &kp N1            &kp N2         &kp N3       &kp FSLH
+&trans              &to 0                                                                                                          &trans       &trans
             >;
         };
 
