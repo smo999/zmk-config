@@ -20,12 +20,12 @@
         compatible = "zmk,combos";
 
         Symbols {
-            bindings = <&mo 2>;
+            bindings = <&mo 1>;
             key-positions = <18 19>;
         };
 
         Symbols2 {
-            bindings = <&mo 2>;
+            bindings = <&mo 1>;
             key-positions = <11 10>;
         };
     };
@@ -168,9 +168,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        symbol_layer: symbol_layer {
+        slto: slto {
             compatible = "zmk,behavior-hold-tap";
-            label = "SYMBOL_LAYER";
+            label = "SLTO";
             bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
@@ -179,9 +179,9 @@
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
         };
 
-        left_home_row_mod: left_home_row_mod {
+        lhrm: lhrm {
             compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_HOME_ROW_MOD";
+            label = "LHRM";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -190,15 +190,26 @@
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 32>;
         };
 
-        right_home_row_mod: right_home_row_mod {
+        rhrm: rhrm {
             compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_HOME_ROW_MOD";
+            label = "RHRM";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-unless-interrupted";
             hold-trigger-key-positions = <0 1 3 4 10 11 12 13 14 20 21 22 23 24 30 31 2>;
+        };
+
+        tri_space: tri_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TRI_SPACE";
+            bindings = <&mo>, <&space_enter>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <16 17 18 7>;
         };
     };
 
@@ -207,28 +218,28 @@
 
         default_layer {
             bindings = <
-&grave_hat                  &comma_semicolon           &dot_colon                   &kp P                      &kp Y    &kp F  &kp G                       &kp C                         &kp R                       &kp L
-&left_home_row_mod LCTRL A  &left_home_row_mod LALT O  &left_home_row_mod LSHIFT E  &left_home_row_mod LGUI I  &kp U    &kp D  &right_home_row_mod RGUI H  &right_home_row_mod RSHIFT T  &right_home_row_mod RALT N  &right_home_row_mod RCTRL S
-&kp APOS                    &kp Q                      &kp J                        &kp K                      &kp X    &kp B  &kp M                       &kp W                         &kp V                       &kp Z
-&lt 3 BACKSPACE             &to 2                                                                                                                                                        &symbol_layer 2 2           &multi_space
-            >;
-        };
-
-        Numbers {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &kp EQUAL     &kp N7  &kp N8  &kp N9  &kp STAR
-&trans  &trans  &trans  &trans  &trans    &kp NUMBER_0  &kp N4  &kp N5  &kp N6  &kp PLUS
-&trans  &trans  &trans  &trans  &trans    &kp N0        &kp N1  &kp N2  &kp N3  &kp FSLH
-&trans  &to 0                                                           &trans  &trans
+&grave_hat       &comma_semicolon  &dot_colon      &kp P         &kp Y    &kp F  &kp G         &kp C           &kp R         &kp L
+&lhrm LCTRL A    &lhrm LALT O      &lhrm LSHIFT E  &lhrm LGUI I  &kp U    &kp D  &rhrm RGUI H  &rhrm RSHIFT T  &rhrm RALT N  &rhrm RCTRL S
+&kp APOS         &kp Q             &kp J           &kp K         &kp X    &kp B  &kp M         &kp W           &kp V         &kp Z
+&lt 3 BACKSPACE  &to 1                                                                                         &slto 1 1     &tri_space 3 0
             >;
         };
 
         Symbols {
             bindings = <
-&less_greater_than  &brackets    &braces    &pars            &kp AT           &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp STAR
-&kp AT              &kp EXCL     &kp MINUS  &kp FSLH         &kp BACKSLASH    &kp N0     &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp AMPS            &kp PERCENT  &kp EQUAL  &kp NON_US_HASH  &kp DOLLAR       &kp N0     &kp N1  &kp N2  &kp N3  &kp FSLH
-&trans              &to 0                                                                                &trans  &trans
+&less_greater_than  &brackets     &braces    &pars            &none            &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp STAR
+&kp AT              &kp QUESTION  &kp MINUS  &kp FSLH         &kp BACKSLASH    &kp N0     &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp AMPS            &kp PERCENT   &kp EQUAL  &kp NON_US_HASH  &kp DOLLAR       &kp N0     &kp N1  &kp N2  &kp N3  &kp FSLH
+&trans              &to 2                                                                                 &to 0   &trans
+            >;
+        };
+
+        Symbols2 {
+            bindings = <
+&kp GREATER_THAN  &kp RBKT  &kp RBRC   &kp RPAR  &trans    &trans  &trans  &trans  &trans  &trans
+&trans            &kp EXCL  &kp UNDER  &kp PIPE  &trans    &trans  &trans  &trans  &trans  &trans
+&trans            &trans    &trans     &trans    &trans    &trans  &trans  &trans  &trans  &trans
+&trans            &trans                                                           &trans  &trans
             >;
         };
 
@@ -247,15 +258,6 @@
 &trans       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans    &trans  &trans         &trans        &trans  &trans
 &trans       &bt BT_CLR     &trans         &trans         &trans    &trans  &trans         &trans        &trans  &trans
 &trans       &to 0                                                                                       &trans  &trans
-            >;
-        };
-
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans                                                    &trans  &trans
             >;
         };
     };
