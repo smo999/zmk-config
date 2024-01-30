@@ -37,6 +37,34 @@
             bindings = <&kp LS(LA(LEFT)) &kp BACKSPACE>;
             label = "DELETE_WORD";
         };
+
+        a_grave: a_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp A>;
+            label = "A_GRAVE";
+        };
+
+        e_grave: e_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp E>;
+            label = "E_GRAVE";
+        };
+
+        u_grave: u_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp U>;
+            label = "U_GRAVE";
+        };
+
+        smart_space: smart_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp SPACE &sk LEFT_SHIFT>;
+            label = "SMART_SPACE";
+        };
     };
 
     behaviors {
@@ -102,6 +130,43 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        a_grave_macro: a_grave_macro {
+            compatible = "zmk,behavior-tap-dance";
+            label = "A_GRAVE_MACRO";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&a_grave>;
+        };
+
+        e_grave_macro: e_grave_macro {
+            compatible = "zmk,behavior-tap-dance";
+            label = "E_GRAVE_MACRO";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&e_grave>;
+        };
+
+        u_grave_macro: u_grave_macro {
+            compatible = "zmk,behavior-tap-dance";
+            label = "U_GRAVE_MACRO";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&u_grave>;
+        };
+
+        space_enter: space_enter {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPACE_ENTER";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp ENTER>;
+        };
+
+        multi_space: multi_space {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MULTI_SPACE";
+            bindings = <&space_enter>, <&smart_space>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -109,10 +174,10 @@
 
         default_layer {
             bindings = <
-&kp APOS         &comma_semicolon  &dot_colon   &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
+&grave_hat       &comma_semicolon  &dot_colon   &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
 &mt LCTRL A      &mt LALT O        &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
-&grave_hat       &kp Q             &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
-&lt 3 BACKSPACE  &to 2                                                                               &lt 2 RET   &lt 3 SPACE
+&kp APOS         &kp Q             &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
+&lt 3 BACKSPACE  &to 2                                                                               &lt 2 RET   &multi_space
             >;
         };
 
@@ -149,6 +214,15 @@
 &trans       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans    &trans  &trans         &trans        &trans  &trans
 &trans       &bt BT_CLR     &trans         &trans         &trans    &trans  &trans         &trans        &trans  &trans
 &trans       &to 0                                                                                       &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans                                                    &trans  &trans
             >;
         };
     };
