@@ -167,6 +167,16 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        symbol_layer: symbol_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYMBOL_LAYER";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -174,10 +184,10 @@
 
         default_layer {
             bindings = <
-&grave_hat       &comma_semicolon  &dot_colon   &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R       &kp L
-&mt LCTRL A      &mt LALT O        &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N  &mt RCTRL S
-&kp APOS         &kp Q             &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V       &kp Z
-&lt 3 BACKSPACE  &to 2                                                                               &lt 2 RET   &multi_space
+&grave_hat       &comma_semicolon  &dot_colon   &kp P       &kp Y    &kp F  &kp G       &kp C        &kp R              &kp L
+&mt LCTRL A      &mt LALT O        &mt LSHFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHFT T  &mt RALT N         &mt RCTRL S
+&kp APOS         &kp Q             &kp J        &kp K       &kp X    &kp B  &kp M       &kp W        &kp V              &kp Z
+&lt 3 BACKSPACE  &to 2                                                                               &symbol_layer 2 2  &multi_space
             >;
         };
 
