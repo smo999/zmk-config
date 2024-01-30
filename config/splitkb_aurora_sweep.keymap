@@ -16,7 +16,19 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        Symbols {
+            bindings = <&mo 2>;
+            key-positions = <18 19>;
+        };
+
+        Symbols2 {
+            bindings = <&mo 2>;
+            key-positions = <11 10>;
+        };
+    };
 
     macros {
         delete_word: delete_word {
