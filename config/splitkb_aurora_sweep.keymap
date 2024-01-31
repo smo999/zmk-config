@@ -204,7 +204,7 @@
         tri_space: tri_space {
             compatible = "zmk,behavior-hold-tap";
             label = "TRI_SPACE";
-            bindings = <&mo>, <&space_enter>;
+            bindings = <&mo>, <&multi_space>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -227,10 +227,10 @@
 
         default_layer {
             bindings = <
-&grave_hat       &comma_semicolon  &dot_colon      &kp P         &kp Y    &kp F  &kp G         &kp C           &kp R         &kp L
-&mt LCTRL A    &mt LALT O      &mt LSHIFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHIFT T  &mt RALT N  &mt RCTRL S
-&kp APOS         &kp Q             &kp J           &kp K         &kp X    &kp B  &kp M         &kp W           &kp V         &kp Z
-&lt 3 BACKSPACE  &sk LSHIFT                                                                                    &sltog 1 1    &space_enter
+&grave_hat       &comma_semicolon  &dot_colon    &kp P       &kp Y    &kp F  &kp G       &kp C         &kp R       &kp L
+&mt LCTRL A      &mt LALT O        &mt LSHIFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHIFT T  &mt RALT N  &mt RCTRL S
+&kp APOS         &kp Q             &kp J         &kp K       &kp X    &kp B  &kp M       &kp W         &kp V       &kp Z
+&lt 3 BACKSPACE  &sk LSHIFT                                                                            &sltog 1 1  &tri_space 3 0
             >;
         };
 
