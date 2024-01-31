@@ -19,14 +19,14 @@
     combos {
         compatible = "zmk,combos";
 
-        Symbols {
-            bindings = <&mo 1>;
+        Enter {
+            bindings = <&kp RETURN>;
             key-positions = <18 19>;
         };
 
-        Symbols2 {
-            bindings = <&mo 1>;
-            key-positions = <11 10>;
+        Tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
         };
     };
 
@@ -257,7 +257,7 @@
 &kp ESCAPE    &trans     &kp TAB    &trans     &trans           &trans  &trans    &kp UP    &trans     &trans
 &trans        &trans     &trans     &trans     &trans           &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
 &kp LG(Z)     &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(V))    &trans  &trans    &trans    &trans     &to 4
-&delete_word  &trans                                                                        &trans     &trans
+&delete_word  &trans                                                                        &trans     &kp RETURN
             >;
         };
 
