@@ -285,10 +285,19 @@
 
         Config {
             bindings = <
-&bootloader  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &trans    &trans  &kp C_BRI_DEC  &kp C_BRI_UP  &trans  &trans
-&trans       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans    &trans  &trans         &trans        &trans  &trans
-&trans       &bt BT_CLR     &trans         &trans         &trans    &trans  &trans         &trans        &trans  &trans
-&trans       &to 0                                                                                       &to 0   &trans
+&bootloader  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3    &trans  &kp C_BRI_DEC  &kp C_BRI_UP  &trans  &trans
+&trans       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3     &trans  &trans         &trans        &trans  &trans
+&trans       &bt BT_CLR     &trans         &trans         &trans           &trans  &trans         &trans        &trans  &trans
+&trans       &to 0                                                                                              &to 0   &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans                                                    &trans  &trans
             >;
         };
     };
