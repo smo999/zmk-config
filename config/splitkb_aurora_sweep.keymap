@@ -64,6 +64,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <8 9>;
         };
+
+        Switch-layer {
+            bindings = <&mo 4>;
+            key-positions = <16 17 18 19>;
+        };
     };
 
     macros {
