@@ -38,25 +38,25 @@
         };
 
         a-acute {
-            bindings = <&a_grave>;
+            bindings = <&kp FR_A_GRAVE>;
             key-positions = <10 0>;
             layers = <0>;
         };
 
         e-grave {
-            bindings = <&e_grave>;
+            bindings = <&kp FR_E_GRAV>;
             key-positions = <12 2>;
             layers = <0>;
         };
 
         u-grave {
-            bindings = <&u_grave>;
+            bindings = <&kp FR_U_GRAVE>;
             key-positions = <4 14>;
             layers = <0>;
         };
 
         e-acute {
-            bindings = <&e_acute>;
+            bindings = <&kp FR_E_ACUTE>;
             key-positions = <12 22>;
             layers = <0>;
         };
@@ -83,36 +83,8 @@
         smart_space: smart_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp SPACE &sk LEFT_SHIFT>;
+            bindings = <&kp FR_DOT &kp FR_SPACE &sk LEFT_SHIFT>;
             label = "SMART_SPACE";
-        };
-
-        e_grave: e_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp E>;
-            label = "E_GRAVE";
-        };
-
-        e_acute: e_acute {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp APOS &kp E>;
-            label = "E_ACUTE";
-        };
-
-        a_grave: a_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp A>;
-            label = "A_GRAVE";
-        };
-
-        u_grave: u_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp U>;
-            label = "U_GRAVE";
         };
     };
 
@@ -120,7 +92,7 @@
         dot_colon: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_COLON";
-            bindings = <&kp DOT>, <&kp COLON>;
+            bindings = <&kp FR_DOT>, <&kp FR_COLON>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -129,7 +101,7 @@
         comma_semicolon: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_SEMICOLON";
-            bindings = <&kp COMMA>, <&kp SEMI>;
+            bindings = <&kp FR_COMMA>, <&kp FR_SEMI>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -138,7 +110,7 @@
         pars: pars {
             compatible = "zmk,behavior-mod-morph";
             label = "PARS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+            bindings = <&kp FR_LEFT_PARENTHESIS>, <&kp FR_RIGHT_PARENTHESIS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -147,7 +119,7 @@
         brackets: brackets {
             compatible = "zmk,behavior-mod-morph";
             label = "BRACKETS";
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+            bindings = <&kp FR_LEFT_BRACKET>, <&kp FR_RIGHT_BRACKET>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -156,7 +128,7 @@
         braces: braces {
             compatible = "zmk,behavior-mod-morph";
             label = "BRACES";
-            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+            bindings = <&kp FR_LEFT_BRACE>, <&kp FR_RIGHT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -165,7 +137,7 @@
         less_greater_than: less_greater_than {
             compatible = "zmk,behavior-mod-morph";
             label = "LESS_GREATER_THAN";
-            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+            bindings = <&kp FR_LESS_THAN>, <&kp FR_GREATER_THAN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -174,7 +146,7 @@
         grave_hat: grave_hat {
             compatible = "zmk,behavior-mod-morph";
             label = "GRAVE_HAT";
-            bindings = <&kp GRAVE>, <&kp CARET>;
+            bindings = <&kp FR_GRAVE>, <&kp FR_CARET>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -243,7 +215,7 @@
         question_excl: question_excl {
             compatible = "zmk,behavior-mod-morph";
             label = "QUESTION_EXCL";
-            bindings = <&kp QUESTION>, <&kp EXCL>;
+            bindings = <&kp FR_QUESTION>, <&kp FR_EXCL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -255,27 +227,27 @@
 
         default_layer {
             bindings = <
-&grave_hat       &comma_semicolon             &dot_colon    &kp P       &kp Y    &kp F  &kp G       &kp C         &kp R       &kp L
-&mt LCTRL A      &mt LALT O                   &mt LSHIFT E  &mt LGUI I  &kp U    &kp D  &mt RGUI H  &mt RSHIFT T  &mt RALT N  &mt RCTRL S
-&kp APOS         &kp Q                        &kp J         &kp K       &kp X    &kp B  &kp M       &kp W         &kp V       &kp Z
+&grave_hat       &comma_semicolon             &dot_colon    &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R       &kp FR_L
+&mt LCTRL FR_A      &mt LALT FR_O                   &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &mt RALT FR_N  &mt RCTRL FR_S
+&kp FR_APOS         &kp FR_Q                        &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
 &lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                      &sltog 1 1  &lt 3 SPACE
             >;
         };
 
         Symbols {
             bindings = <
-&less_greater_than  &brackets       &braces    &pars     &none            &kp COMMA  &kp N7  &kp N8  &kp N9  &kp STAR
-&kp AT              &question_excl  &kp MINUS  &kp FSLH  &kp BACKSLASH    &kp DOT    &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp AMPS            &kp PERCENT     &kp EQUAL  &kp HASH  &kp DOLLAR       &kp N0     &kp N1  &kp N2  &kp N3  &kp FSLH
+&less_greater_than  &brackets       &braces    &pars     &none            &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
+&kp FR_AT              &question_excl  &kp FR_MINUS  &kp FR_FSLH  &kp FR_BACKSLASH    &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
+&kp FR_AMPS            &kp FR_PERCENT     &kp FR_EQUAL  &kp FR_HASH  &kp FR_DOLLAR       &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
 &trans              &trans                                                                           &to 0   &trans
             >;
         };
 
         Symbols2 {
             bindings = <
-&kp GREATER_THAN  &kp RBKT  &kp RBRC   &kp RPAR  &trans    &trans  &trans  &trans  &trans  &trans
-&trans            &kp EXCL  &kp UNDER  &kp PIPE  &trans    &trans  &trans  &trans  &trans  &trans
-&trans            &trans    &kp PLUS   &trans    &trans    &trans  &trans  &trans  &trans  &trans
+&kp FR_GREATER_THAN  &kp FR_RBKT  &kp FR_RBRC   &kp FR_RPAR  &trans    &trans  &trans  &trans  &trans  &trans
+&trans            &kp FR_EXCL  &kp FR_UNDER  &kp FR_PIPE  &trans    &trans  &trans  &trans  &trans  &trans
+&trans            &trans    &kp FR_PLUS   &trans    &trans    &trans  &trans  &trans  &trans  &trans
 &trans            &trans                                                           &trans  &trans
             >;
         };
@@ -284,7 +256,7 @@
             bindings = <
 &kp ESCAPE  &trans     &trans     &trans     &trans           &trans  &trans    &kp UP    &trans     &trans
 &kp TAB     &trans     &trans     &trans     &trans           &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
-&kp LG(Z)   &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(V))    &trans  &trans    &trans    &trans     &to 4
+&kp LG(FR_Z)   &kp LG(FR_X)  &kp LG(FR_C)  &kp LG(FR_V)  &kp LS(LG(FR_V))    &trans  &trans    &trans    &trans     &to 4
 &trans      &trans                                                                        &trans     &kp RETURN
             >;
         };
