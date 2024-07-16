@@ -238,6 +238,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        apos_quotes: apos_quotes {
+            compatible = "zmk,behavior-mod-morph";
+            label = "APOS_QUOTES";
+            bindings = <&kp FR_APOS>, <&kp FR_DOUBLE_QUOTES>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -247,7 +256,7 @@
             bindings = <
 &grave_hat       &comma_semicolon             &dot_colon       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R       &kp FR_L
 &mt LCTRL FR_A   &mt LALT FR_O                &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &mt RALT FR_N  &mt RCTRL FR_S
-&kp FR_APOS      &kp FR_Q                     &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
+&apos_quotes     &kp FR_Q                     &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
 &lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 3 SPACE
             >;
         };
