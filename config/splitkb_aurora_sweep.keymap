@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "keys_fr.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "keys_fr.h"
 
 #define SMB 1
 
@@ -220,6 +220,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        minusunderscore: minusunderscore {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUSUNDERSCORE";
+            bindings = <&kp FR_MINUS>, <&kp FR_UNDERSCORE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        Fslashpipe: Fslashpipe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "FSLASHPIPE";
+            bindings = <&kp FR_BACKSLASH>, <&kp FR_PIPE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -227,37 +245,37 @@
 
         default_layer {
             bindings = <
-&grave_hat       &comma_semicolon             &dot_colon    &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R       &kp FR_L
-&mt LCTRL FR_A      &mt LALT FR_O                   &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &mt RALT FR_N  &mt RCTRL FR_S
-&kp FR_APOS         &kp FR_Q                        &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
-&lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                      &sltog 1 1  &lt 3 SPACE
+&grave_hat       &comma_semicolon             &dot_colon       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R       &kp FR_L
+&mt LCTRL FR_A   &mt LALT FR_O                &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &mt RALT FR_N  &mt RCTRL FR_S
+&kp FR_APOS      &kp FR_Q                     &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
+&lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 3 SPACE
             >;
         };
 
         Symbols {
             bindings = <
-&less_greater_than  &brackets       &braces    &pars     &none            &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
-&kp FR_AT              &question_excl  &kp FR_MINUS  &kp FR_FSLH  &kp FR_BACKSLASH    &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
-&kp FR_AMPS            &kp FR_PERCENT     &kp FR_EQUAL  &kp FR_HASH  &kp FR_DOLLAR       &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
-&trans              &trans                                                                           &to 0   &trans
+&kp FR_LESS_THAN  &brackets       &braces           &pars        &none            &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
+&kp FR_AT         &question_excl  &minusunderscore  &kp FR_FSLH  &Fslashpipe      &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
+&kp FR_AMPS       &kp FR_PERCENT  &kp FR_EQUAL      &kp FR_HASH  &kp FR_DOLLAR    &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
+&trans            &trans                                                                                              &to 0      &trans
             >;
         };
 
         Symbols2 {
             bindings = <
 &kp FR_GREATER_THAN  &kp FR_RBKT  &kp FR_RBRC   &kp FR_RPAR  &trans    &trans  &trans  &trans  &trans  &trans
-&trans            &kp FR_EXCL  &kp FR_UNDER  &kp FR_PIPE  &trans    &trans  &trans  &trans  &trans  &trans
-&trans            &trans    &kp FR_PLUS   &trans    &trans    &trans  &trans  &trans  &trans  &trans
-&trans            &trans                                                           &trans  &trans
+&trans               &kp FR_EXCL  &kp FR_UNDER  &kp FR_PIPE  &trans    &trans  &trans  &trans  &trans  &trans
+&trans               &trans       &kp FR_PLUS   &trans       &trans    &trans  &trans  &trans  &trans  &trans
+&trans               &trans                                                                    &trans  &trans
             >;
         };
 
         Nav {
             bindings = <
-&kp ESCAPE  &trans     &trans     &trans     &trans           &trans  &trans    &kp UP    &trans     &trans
-&kp TAB     &trans     &trans     &trans     &trans           &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
-&kp LG(FR_Z)   &kp LG(FR_X)  &kp LG(FR_C)  &kp LG(FR_V)  &kp LS(LG(FR_V))    &trans  &trans    &trans    &trans     &to 4
-&trans      &trans                                                                        &trans     &kp RETURN
+&kp ESCAPE    &trans        &trans        &trans        &trans              &trans  &trans    &kp UP    &trans     &trans
+&kp TAB       &trans        &trans        &trans        &trans              &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
+&kp LG(FR_Z)  &kp LG(FR_X)  &kp LG(FR_C)  &kp LG(FR_V)  &kp LS(LG(FR_V))    &trans  &trans    &trans    &trans     &to 4
+&trans        &trans                                                                                    &trans     &kp RETURN
             >;
         };
 
