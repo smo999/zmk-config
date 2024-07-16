@@ -44,7 +44,7 @@
         };
 
         e-grave {
-            bindings = <&kp FR_E_GRAV>;
+            bindings = <&kp FR_E_GRAVE>;
             key-positions = <12 2>;
             layers = <0>;
         };
