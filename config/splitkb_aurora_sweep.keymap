@@ -289,7 +289,7 @@
 &trans        &trans                                                                                    &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(Z) LG(LS(Z))>;
+            sensor-bindings = <&inc_dec_kp LG(FR_Z) LG(LS(FR_Z))>;
         };
 
         Config {
