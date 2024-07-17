@@ -325,11 +325,7 @@
 };
 
 
-&left_encoder {
-    steps = <72>;
-};
-
-&right_encoder {
+&left_encoder1 {
     steps = <72>;
 };
 
