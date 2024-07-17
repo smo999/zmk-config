@@ -21,7 +21,7 @@
 
 &left_encoder1 {
     compatible = "alps,ec11";
-    steps = <90>;
+    steps = <60>;
 };
 
 &sensors {
