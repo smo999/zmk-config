@@ -268,7 +268,7 @@
 &lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 3 SPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW>;
+            sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT>;
         };
 
         Symbols {
