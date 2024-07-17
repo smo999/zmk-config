@@ -70,6 +70,11 @@
             bindings = <&mo 4>;
             key-positions = <16 17 18 19>;
         };
+
+        switch_sensors {
+            bindings = <&mo 5>;
+            key-positions = <10 11 12 13>;
+        };
     };
 
     macros {
@@ -304,6 +309,8 @@
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
 &trans  &trans                                                    &trans  &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
         };
     };
 };
