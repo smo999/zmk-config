@@ -18,22 +18,10 @@
 
 &sl { ignore-modifiers; };
 
-
-&left_encoder1 {
-    compatible = "alps,ec11";
-    steps = <60>;
-};
-
-&left_encoder2 {
-    compatible = "alps,ec11";
-    steps = <60>;
-};
+&sensors        { triggers-per-rotation = <30>; };
+&left_encoder   { steps = <60>; };
 
 / {
-    sensors {
-        triggers-per-rotation = <30>;
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -280,7 +268,7 @@
 &lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 3 SPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW &inc_dec_kp A B>;
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW>;
         };
 
         Symbols {
@@ -326,8 +314,6 @@
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
 &trans  &trans                                                    &trans  &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW &inc_dec_kp A B>;
         };
     };
 };
