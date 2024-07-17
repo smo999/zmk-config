@@ -30,7 +30,9 @@
     triggers-per-rotation = <30>;
 };
 / {
-
+    sensors {
+        triggers-per-rotation = <30>;
+    };
 
     combos {
         compatible = "zmk,combos";
