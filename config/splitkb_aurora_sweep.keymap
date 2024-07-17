@@ -19,12 +19,12 @@
 &sl { ignore-modifiers; };
 
 
+&sensors {
+    triggers-per-rotation = <36>;
+};
 
 / {
 
-    &sensors {
-        triggers-per-rotation = <36>;
-    };
 
     combos {
         compatible = "zmk,combos";
