@@ -19,7 +19,7 @@
 &sl { ignore-modifiers; };
 
 &sensors        { triggers-per-rotation = <30>; };
-&left_encoder   { steps = <60>; };
+&left_encoder1  { steps = <60>; };
 
 / {
     combos {
