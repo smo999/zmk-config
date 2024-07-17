@@ -18,8 +18,9 @@
 
 &sl { ignore-modifiers; };
 
-&sensors        { triggers-per-rotation = <30>; };
-&left_encoder1  { steps = <60>; };
+&sensors { triggers-per-rotation = <30>; };
+
+&left_encoder1 { steps = <60>; };
 
 / {
     combos {
@@ -70,12 +71,12 @@
         };
 
         Switch-layer {
-            bindings = <&mo 4>;
+            bindings = <&mo 3>;
             key-positions = <16 17 18 19>;
         };
 
         switch_sensors {
-            bindings = <&mo 5>;
+            bindings = <&mo 4>;
             key-positions = <10 11 12 13>;
         };
     };
@@ -262,10 +263,10 @@
 
         default_layer {
             bindings = <
-&grave_hat       &comma_semicolon             &dot_colon       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R       &kp FR_L
-&mt LCTRL FR_A   &mt LALT FR_O                &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &mt RALT FR_N  &mt RCTRL FR_S
-&apos_quotes     &kp FR_Q                     &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
-&lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 3 SPACE
+&grave_hat      &comma_semicolon             &dot_colon       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R       &kp FR_L
+&mt LCTRL FR_A  &mt LALT FR_O                &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &mt RALT FR_N  &mt RCTRL FR_S
+&apos_quotes    &kp FR_Q                     &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
+&mo 5           &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 2 SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT>;
@@ -280,31 +281,26 @@
             >;
         };
 
-        Symbols2 {
-            bindings = <
-&kp FR_GREATER_THAN  &kp FR_RBKT  &kp FR_RBRC   &kp FR_RPAR  &trans    &trans  &trans  &trans  &trans  &trans
-&trans               &kp FR_EXCL  &kp FR_UNDER  &kp FR_PIPE  &trans    &trans  &trans  &trans  &trans  &trans
-&trans               &trans       &kp FR_PLUS   &trans       &trans    &trans  &trans  &trans  &trans  &trans
-&trans               &trans                                                                    &trans  &trans
-            >;
-        };
-
         Nav {
             bindings = <
-&kp ESCAPE    &trans        &trans        &trans        &trans              &trans  &trans    &kp UP    &trans     &trans
+&kp ESCAPE    &trans        &trans        &trans        &trans              &trans  &trans    &kp UP    &trans     &kp BACKSPACE
 &kp TAB       &trans        &trans        &trans        &trans              &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
-&kp LG(FR_Z)  &kp LG(FR_X)  &kp LG(FR_C)  &kp LG(FR_V)  &kp LS(LG(FR_V))    &trans  &trans    &trans    &trans     &to 4
-&trans        &trans                                                                                    &trans     &kp RETURN
+&kp LG(FR_Z)  &kp LG(FR_X)  &kp LG(FR_C)  &kp LG(FR_V)  &kp LS(LG(FR_V))    &trans  &trans    &trans    &trans     &trans
+&trans        &trans                                                                                    &trans     &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LG(Z) LG(LS(Z))>;
         };
 
         Config {
             bindings = <
-&bootloader  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3    &trans  &kp C_BRI_DEC  &kp C_BRI_UP  &trans  &trans
-&trans       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3     &trans  &trans         &trans        &trans  &trans
-&trans       &bt BT_CLR     &trans         &trans         &trans           &trans  &trans         &trans        &trans  &trans
-&trans       &to 0                                                                                              &to 0   &trans
+&bootloader  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3    &trans  &trans  &trans  &trans  &trans
+&trans       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3     &trans  &trans  &trans  &trans  &trans
+&trans       &bt BT_CLR     &trans         &trans         &trans           &trans  &trans  &trans  &trans  &trans
+&trans       &to 0                                                                                 &to 0   &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRI_DEC C_BRI_UP>;
         };
 
         layer_5 {
@@ -314,8 +310,19 @@
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
 &trans  &trans                                                    &trans  &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
+        };
+
+        volume {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans                                                    &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
-
-
