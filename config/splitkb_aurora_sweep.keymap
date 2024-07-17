@@ -264,6 +264,8 @@
 &apos_quotes     &kp FR_Q                     &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
 &lt 3 BACKSPACE  &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 3 SPACE
             >;
+
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW>, <&inc_dec_kp A B>;
         };
 
         Symbols {
