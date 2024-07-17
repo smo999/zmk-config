@@ -19,23 +19,13 @@
 &sl { ignore-modifiers; };
 
 
-&left_encoder {
-    compatible = "alps,ec11";
-    steps = <90>;
-};
-
-&right_encoder {
-    compatible = "alps,ec11";
-    steps = <90>;
-};
-
-&sensors {
-    compatible = "zmk,keymap-sensors";
-    sensors = <&left_encoder &right_encoder>;
-    triggers-per-rotation = <30>;
-};
 
 / {
+
+    &sensors {
+        triggers-per-rotation = <36>;
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -333,3 +323,13 @@
         };
     };
 };
+
+
+&left_encoder {
+    steps = <72>;
+};
+
+&right_encoder {
+    steps = <72>;
+};
+
