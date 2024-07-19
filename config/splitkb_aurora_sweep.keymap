@@ -164,7 +164,7 @@
         sltog: sltog {
             compatible = "zmk,behavior-hold-tap";
             label = "SLTOG";
-            bindings = <&mo>, <&symbol_options>;
+            bindings = <&mo>, <&sl>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -284,7 +284,7 @@
         shift_symbols {
             bindings = <
 &kp FR_GREATER_THAN  &kp FR_RIGHT_BRACKET  &kp FR_RIGHT_BRACE  &kp FR_RIGHT_PARENTHESIS  &kp FR_GRAVE    &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
-&kp FR_AMPS          &kp EXCL              &kp FR_UNDER        &kp FR_FSLH               &kp FR_PIPE     &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
+&kp FR_AMPS          &kp FR_EXCL           &kp FR_UNDER        &kp FR_FSLH               &kp FR_PIPE     &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
 &grave_hat           &kp FR_PERCENT        &kp FR_PLUS         &kp FR_HASH               &kp FR_EURO     &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
 &trans               &trans                                                                                                                  &to 0      &trans
             >;
