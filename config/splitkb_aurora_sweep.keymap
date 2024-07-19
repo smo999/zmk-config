@@ -266,7 +266,7 @@
 &grave_hat      &comma_semicolon             &dot_colon       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R       &kp FR_L
 &mt LCTRL FR_A  &mt LALT FR_O                &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &mt RALT FR_N  &mt RCTRL FR_S
 &apos_quotes    &kp FR_Q                     &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V       &kp FR_Z
-&mo 5           &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &sltog 1 1     &lt 2 SPACE
+&mo 5           &stkp LEFT_SHIFT LEFT_SHIFT                                                                                        &lt 2 SPACE    &sltog 1 1
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT>;
