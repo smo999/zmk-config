@@ -161,9 +161,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        sltog: sltog {
+        sltog2: sltog2 {
             compatible = "zmk,behavior-hold-tap";
-            label = "SLTOG";
+            label = "SLTOG2";
             bindings = <&mo>, <&my_sl>;
 
             #binding-cells = <2>;
@@ -265,6 +265,16 @@
             lazy;
             release-after-ms = <200>;
         };
+
+        sltog: sltog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SLTOG";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -286,7 +296,7 @@
 &kp FR_LESS_THAN  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_GRAVE     &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
 &kp FR_AT         &kp FR_QUESTION      &kp FR_MINUS       &kp FR_FSLH              &kp FR_SLASH     &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
 &kp FR_AMPS       &kp FR_PERCENT       &kp FR_EQUAL       &kp FR_HASH              &kp FR_DOLLAR    &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
-&trans            &sltog 2 0                                                                                                            &to 0      &trans
+&trans            &sltog2 2 2                                                                                                           &to 0      &trans
             >;
         };
 
