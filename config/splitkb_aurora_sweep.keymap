@@ -164,7 +164,7 @@
         sltog: sltog {
             compatible = "zmk,behavior-hold-tap";
             label = "SLTOG";
-            bindings = <&mo>, <&sl>;
+            bindings = <&mo>, <&my_sl>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -255,6 +255,15 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        my_sl: my_sl {
+            compatible = "zmk,behavior-sticky-key";
+            label = "MY_SL";
+            bindings = <&mo>;
+            #binding-cells = <1>;
+            lazy;
+            release-after-ms = <200>;
         };
     };
 
