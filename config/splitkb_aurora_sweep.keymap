@@ -164,7 +164,7 @@
         sltog2: sltog2 {
             compatible = "zmk,behavior-hold-tap";
             label = "SLTOG2";
-            bindings = <&mo>, <&my_sl>;
+            bindings = <&mo>, <&my_sl2>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -257,9 +257,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        my_sl: my_sl {
+        my_sl2: my_sl2 {
             compatible = "zmk,behavior-sticky-key";
-            label = "MY_SL";
+            label = "MY_SL2";
             bindings = <&mo>;
             #binding-cells = <1>;
             lazy;
@@ -269,11 +269,19 @@
         sltog: sltog {
             compatible = "zmk,behavior-hold-tap";
             label = "SLTOG";
-            bindings = <&mo>, <&sl>;
+            bindings = <&mo>, <&my_sl1>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+        };
+
+        my_sl1: my_sl1 {
+            compatible = "zmk,behavior-sticky-key";
+            label = "MY_SL1";
+            bindings = <&mo>;
+            #binding-cells = <1>;
+            release-after-ms = <200>;
         };
     };
 
