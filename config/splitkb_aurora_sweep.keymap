@@ -71,12 +71,12 @@
         };
 
         Switch-layer {
-            bindings = <&mo 4>;
+            bindings = <&mo 5>;
             key-positions = <16 17 18 19>;
         };
 
         switch_sensors {
-            bindings = <&mo 5>;
+            bindings = <&mo 6>;
             key-positions = <10 11 12 13>;
         };
     };
@@ -195,7 +195,7 @@
         symbol_options: symbol_options {
             compatible = "zmk,behavior-mod-morph";
             label = "SYMBOL_OPTIONS";
-            bindings = <&sl 1>, <&to 1>;
+            bindings = <&sl 2>, <&to 2>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -300,12 +300,21 @@
         default_layer {
             bindings = <
 &kp BACKSPACE   &comma_semicolon    &dot_colon       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R     &kp FR_L
-&mt LCTRL FR_A  &mt LALT FR_O       &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &lt 7 FR_N   &mt RCTRL FR_S
+&mt LCTRL FR_A  &mt LALT FR_O       &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &lt 8 FR_N   &mt RCTRL FR_S
 &apos_quotes    &kp FR_Q            &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V     &kp FR_Z
-&mo 6           &skmo 3 LEFT_SHIFT                                                                                        &lt 3 SPACE  &sltog 1 1
+&mo 7           &skmo 4 LEFT_SHIFT                                                                                        &lt 4 SPACE  &sltog 2 2
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT>;
+        };
+
+        shift {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans                                                    &trans  &trans
+            >;
         };
 
         Symbols {
@@ -313,7 +322,7 @@
 &kp FR_LESS_THAN  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_GRAVE     &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
 &kp FR_AT         &kp FR_QUESTION      &kp FR_MINUS       &kp FR_SLASH             &kp BACKSLASH    &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
 &kp FR_CARET      &kp FR_PERCENT       &kp FR_EQUAL       &kp FR_HASH              &kp FR_DOLLAR    &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
-&trans            &sltog2 2 2                                                                                                           &to 0      &trans
+&trans            &sltog2 3 3                                                                                                           &to 0      &trans
             >;
         };
 
