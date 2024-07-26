@@ -319,6 +319,15 @@
 
         Symbols {
             bindings = <
+&kp FR_LESS_THAN  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_GRAVE     &kp FR_COMMA  &kp FR_RIGHT_PARENTHESIS  &kp FR_RIGHT_BRACE  &kp FR_RIGHT_BRACKET  &kp FR_GREATER_THAN
+&kp FR_AT         &kp FR_UNDER      &kp FR_MINUS       &FR_EQUAL             &trans    &trans    &kp FR_SLASH  &kp FR_PIPE  &kp FR_BACKSLASH  &kp FR_PLUS
+&kp FR_AMPS      &kp FC_EXCL       &kp FR_PLUS       &kp FR_HASH              &trans    &kp FR_TILDE     &kp FR_PERCENT  &trans  &trans  &trans
+&trans            &sltog2 3 3                                                                                                           &to 0      &trans
+            >;
+        };
+
+        Numbers {
+            bindings = <
 &kp FR_LESS_THAN  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_GRAVE     &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
 &kp FR_AT         &kp FR_QUESTION      &kp FR_MINUS       &kp FR_SLASH             &kp BACKSLASH    &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
 &kp FR_CARET      &kp FR_PERCENT       &kp FR_EQUAL       &kp FR_HASH              &kp FR_DOLLAR    &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
