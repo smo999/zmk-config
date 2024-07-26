@@ -310,9 +310,9 @@
 
         shift {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&kp BACKSPACE   &kp FR_SEMI    &kp FR_COLON       &kp LS(FR_P)       &kp LS(FR_Y)    &kp LS(FR_F)  &kp LS(FR_G)       &kp LS(FR_C)         &kp LS(FR_R)     &kp LS(FR_L)
+&mt LCTRL LS(FR_A)  &mt LALT LS(FR_O)       &mt LSHIFT LS(FR_E)  &mt LGUI LS(FR_I)  &kp LS(FR_U)    &kp LS(FR_D)  &mt RGUI LS(FR_H)  &mt RSHIFT LS(FR_T)  &lt 8 LS(FR_N)   &mt RCTRL LS(FR_S)
+&apos_quotes    &kp LS(FR_Q)            &kp LS(FR_J)         &kp LS(FR_K)       &kp LS(FR_X)    &kp LS(FR_B)  &kp LS(FR_M)       &kp LS(FR_W)         &kp LS(FR_V)     &kp LS(FR_Z)
 &trans  &trans                                                    &trans  &trans
             >;
         };
