@@ -261,6 +261,7 @@
             bindings = <&mo>;
             #binding-cells = <1>;
             release-after-ms = <200>;
+            quick-release;
         };
 
         skmo: skmo {
@@ -305,9 +306,9 @@
         default_layer {
             bindings = <
 &kp BACKSPACE   &kp FR_COMMA   &kp FR_DOT       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R     &kp FR_L
-&mt LCTRL FR_A  &mt LALT FR_O  &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &lt 8 FR_N   &mt RCTRL FR_S
+&mt LCTRL FR_A  &mt LALT FR_O  &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &lt 9 FR_N   &mt RCTRL FR_S
 &kp FR_APOS     &kp FR_Q       &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V     &kp FR_Z
-&mo 7           &sltog 5 1                                                                                           &lt 5 SPACE  &sltog 2 2
+&mo 8           &sltog 5 1                                                                                           &lt 5 SPACE  &sltog 2 2
             >;
 
             sensor-bindings = <&left_right_up_down>;
@@ -412,12 +413,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        numbers {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
