@@ -26,21 +26,6 @@
     combos {
         compatible = "zmk,combos";
 
-        Enter {
-            bindings = <&kp RETURN>;
-            key-positions = <18 19>;
-        };
-
-        Tab {
-            bindings = <&kp TAB>;
-            key-positions = <10 11>;
-        };
-
-        Escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-        };
-
         a-acute {
             bindings = <&kp FR_A_GRAVE>;
             key-positions = <10 0>;
@@ -63,11 +48,6 @@
             bindings = <&kp FR_E_ACUTE>;
             key-positions = <12 22>;
             layers = <0>;
-        };
-
-        back_space_cb {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
         };
 
         Switch-layer {
@@ -292,6 +272,31 @@
             tapping-term-ms = <400>;
             flavor = "tap-preferred";
         };
+
+        up_left: up_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UP_LEFT";
+            bindings = <&kp LEFT>, <&kp UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        down_right: down_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOWN_RIGHT";
+            bindings = <&kp RIGHT>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        left_right_up_down: left_right_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "LEFT_RIGHT_UP_DOWN";
+            #sensor-binding-cells = <0>;
+            bindings = <&up_left>, <&down_right>;
+        };
     };
 
     keymap {
@@ -299,13 +304,13 @@
 
         default_layer {
             bindings = <
-&kp BACKSPACE   &comma_semicolon  &dot_colon       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R     &kp FR_L
-&mt LCTRL FR_A  &mt LALT FR_O     &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &lt 8 FR_N   &mt RCTRL FR_S
-&apos_quotes    &kp FR_Q          &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V     &kp FR_Z
-&mo 7           &sltog 5 1                                                                                              &lt 4 SPACE  &sltog 2 2
+&kp BACKSPACE   &kp FR_COMMA   &kp FR_DOT       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R     &kp FR_L
+&mt LCTRL FR_A  &mt LALT FR_O  &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &lt 8 FR_N   &mt RCTRL FR_S
+&kp FR_APOS     &kp FR_Q       &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V     &kp FR_Z
+&mo 7           &sltog 5 1                                                                                           &lt 5 SPACE  &sltog 2 2
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT>;
+            sensor-bindings = <&left_right_up_down>;
         };
 
         shift {
@@ -319,10 +324,10 @@
 
         Symbols {
             bindings = <
-&trans       &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_LESS_THAN    &kp FR_GREATER_THAN  &kp FR_RIGHT_PARENTHESIS  &kp FR_RIGHT_BRACE  &kp FR_RIGHT_BRACKET  &trans
-&kp FR_AT    &kp FR_UNDER         &kp FR_MINUS       &kp FR_EQUAL             &trans              &trans               &kp FR_SLASH              &kp FR_PIPE         &kp FR_BACKSLASH      &kp FR_PLUS
-&kp FR_AMPS  &kp FR_EXCL          &kp FR_PLUS        &kp FR_HASH              &trans              &kp FR_TILDE         &kp FR_PERCENT            &trans              &trans                &trans
-&trans       &sltog2 3 3                                                                                                                                             &to 0                 &trans
+&kp FR_GRAVE  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_LESS_THAN    &kp FR_GREATER_THAN  &kp FR_RIGHT_PARENTHESIS  &kp FR_RIGHT_BRACE  &kp FR_RIGHT_BRACKET  &kp FR_ASTERISK
+&kp FR_AT     &kp FR_UNDER         &kp FR_MINUS       &kp FR_EQUAL             &trans              &trans               &kp FR_SLASH              &kp FR_PIPE         &kp FR_BACKSLASH      &kp FR_PLUS
+&kp FR_AMPS   &kp FR_EXCL          &kp FR_PLUS        &kp FR_HASH              &trans              &kp FR_TILDE         &kp FR_PERCENT            &trans              &trans                &trans
+&trans        &sltog2 3 3                                                                                                                                             &to 0                 &trans
             >;
         };
 
