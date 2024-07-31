@@ -51,7 +51,7 @@
         };
 
         Switch-layer {
-            bindings = <&mo 5>;
+            bindings = <&mo 6>;
             key-positions = <16 17 18 19>;
         };
 
