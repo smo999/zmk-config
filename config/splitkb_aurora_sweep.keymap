@@ -25,9 +25,9 @@
 &left_encoder1 { steps = <60>; };
 
 / {
-    #include "../../../moutis_behaviors.dtsi"
-    #include "../../../moutis_macros.dtsi"
-    #include "../../../moutis_combos.dtsi"
+    #include "moutis_behaviors.dtsi"
+    #include "moutis_macros.dtsi"
+    #include "moutis_combos.dtsi"
 
     combos {
         compatible = "zmk,combos";
