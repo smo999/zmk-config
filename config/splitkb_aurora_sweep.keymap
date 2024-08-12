@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#include "../../../key_names.h"
+
 #define SMB 1
 
 &mt {
@@ -23,6 +25,10 @@
 &left_encoder1 { steps = <60>; };
 
 / {
+    #include "../../../moutis_behaviors.dtsi"
+    #include "../../../moutis_macros.dtsi"
+    #include "../../../moutis_combos.dtsi"
+
     combos {
         compatible = "zmk,combos";
 
