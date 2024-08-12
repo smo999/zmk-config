@@ -417,9 +417,9 @@
 &trans  &trans                                                    &trans  &trans
             >;
         };
+        #include "corneish_zen.l_alpha-HD-vb.dtsi"  // base (alpha) layer (& related adaptive layers)
+        #include "corneish_zen.l_layers.dtsi"  // all other (common) layers (shouldn't vary)
     };
-    #include "corneish_zen.l_alpha-HD-vb.dtsi"  // base (alpha) layer (& related adaptive layers)
-    #include "corneish_zen.l_layers.dtsi"  // all other (common) layers (shouldn't vary)
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
