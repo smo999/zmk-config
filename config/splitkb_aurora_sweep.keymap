@@ -25,65 +25,11 @@
 &left_encoder1 { steps = <60>; };
 
 / {
-    #include "moutis_behaviors.dtsi"
     #include "moutis_macros.dtsi"
     #include "moutis_combos.dtsi"
 
-    combos {
-        compatible = "zmk,combos";
-
-        a-acute {
-            bindings = <&kp FR_A_GRAVE>;
-            key-positions = <10 0>;
-            layers = <0>;
-        };
-
-        e-grave {
-            bindings = <&kp FR_E_GRAVE>;
-            key-positions = <12 2>;
-            layers = <0>;
-        };
-
-        u-grave {
-            bindings = <&kp FR_U_GRAVE>;
-            key-positions = <4 14>;
-            layers = <0>;
-        };
-
-        e-acute {
-            bindings = <&kp FR_E_ACUTE>;
-            key-positions = <12 22>;
-            layers = <0>;
-        };
-
-        Switch-layer {
-            bindings = <&mo 6>;
-            key-positions = <16 17 18 19>;
-        };
-
-        switch_sensors {
-            bindings = <&mo 6>;
-            key-positions = <10 11 12 13>;
-        };
-    };
-
-    macros {
-        delete_word: delete_word {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(LEFT)) &kp BACKSPACE>;
-            label = "DELETE_WORD";
-        };
-
-        smart_space: smart_space {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp FR_DOT &kp FR_SPACE &sk LEFT_SHIFT>;
-            label = "SMART_SPACE";
-        };
-    };
-
     behaviors {
+        #include "moutis_behaviors.dtsi"
         dot_colon: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_COLON";

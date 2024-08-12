@@ -33,6 +33,39 @@
 combos {
     compatible = "zmk,combos";
 
+        a-acute {
+            bindings = <&kp FR_A_GRAVE>;
+            key-positions = <10 0>;
+            layers = <0>;
+        };
+
+        e-grave {
+            bindings = <&kp FR_E_GRAVE>;
+            key-positions = <12 2>;
+            layers = <0>;
+        };
+
+        u-grave {
+            bindings = <&kp FR_U_GRAVE>;
+            key-positions = <4 14>;
+            layers = <0>;
+        };
+
+        e-acute {
+            bindings = <&kp FR_E_ACUTE>;
+            key-positions = <12 22>;
+            layers = <0>;
+        };
+
+        Switch-layer {
+            bindings = <&mo 6>;
+            key-positions = <16 17 18 19>;
+        };
+
+        switch_sensors {
+            bindings = <&mo 6>;
+            key-positions = <10 11 12 13>;
+        };
 //
 // control/modes
 //
