@@ -257,6 +257,7 @@
         };
 
         shift {
+            display-name = "l_shift";
             bindings = <
 &trans                &kp FR_SEMI        &kp FR_COLON         &kp LS(FR_P)       &kp LS(FR_Y)    &kp LS(FR_F)  &kp LS(FR_G)       &kp LS(FR_C)         &kp LS(FR_R)    &kp LS(FR_L)
 &mt LCTRL LS(FR_A)    &mt LALT LS(FR_O)  &mt LSHIFT LS(FR_E)  &mt LGUI LS(FR_I)  &kp LS(FR_U)    &kp LS(FR_D)  &mt RGUI LS(FR_H)  &mt RSHIFT LS(FR_T)  &lt 0 LS(FR_N)  &mt RCTRL LS(FR_S)
@@ -266,6 +267,7 @@
         };
 
         Symbols {
+            display-name = "l_symbols";
             bindings = <
 &kp FR_GRAVE  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_LESS_THAN    &kp FR_GREATER_THAN  &kp FR_RIGHT_PARENTHESIS  &kp FR_RIGHT_BRACE  &kp FR_RIGHT_BRACKET  &kp FR_ASTERISK
 &kp FR_AT     &kp FR_UNDER         &kp FR_MINUS       &kp FR_EQUAL             &trans              &trans               &kp FR_SLASH              &kp FR_PIPE         &kp FR_BACKSLASH      &kp FR_PLUS
@@ -275,6 +277,7 @@
         };
 
         Numbers {
+            display-name = "l_numbers";
             bindings = <
 &kp FR_LESS_THAN  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_GRAVE     &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
 &kp FR_AT         &kp FR_QUESTION      &kp FR_MINUS       &kp FR_SLASH             &kp BACKSLASH    &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
@@ -314,17 +317,6 @@
             sensor-bindings = <&inc_dec_kp C_BRI_DEC C_BRI_UP>;
         };
 
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans                                                    &trans  &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
-        };
-
         layer_7 {
             bindings = <
 &trans  &kp FR_UMLAUT    &kp FR_CARET  &kp FR_LEFT_PARENTHESIS  &kp FR_CARET    &trans  &kp FR_RIGHT_PARENTHESIS  &kp FR_C_CEDILLA  &trans  &trans
@@ -334,14 +326,6 @@
             >;
         };
 
-        layer_9 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans                                                    &trans  &trans
-            >;
-        };
 
         #include "corneish_zen.l_alpha-HD-vv.dtsi"  // base (alpha) layer (& related adaptive layers)
         #include "corneish_zen.l_layers.dtsi"  // all other (common) layers (shouldn't vary)
