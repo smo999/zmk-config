@@ -58,47 +58,34 @@
 #define THUMBS LH2 LH1 RH1 RH2                                      // thumb keys
 
 // my layers
+#define	l_default		0
+#define	l_alpha		1
+#define	l_akG		2
+#define	l_akM		3
+#define	l_akX		4
+#define	l_akT		5
+#define	l_akC		6
+#define	l_akK		7
+#define	l_akD		8
+#define	l_akW		9
+#define	l_akF		10
+#define	l_akP		11
+#define	l_akB		12
+#define	l_akV		13
+#define	l_akJ		14
+#define	l_akA		15
+#define	l_akU		16
+#define	l_akE		17
+#define	l_akO		18
+#define	l_akI		19
+#define	l_akDot		20
+#define	l_symbols		21
+#define	l_numbers		22
+#define	l_nav2		23
+#define	l_nav1		24
+#define	l_config		25
+#define	l_writing_symbols		26
+		
+// define all the alpha layers of the hands down layout 
+#define ls_hd l_alpha l_akG l_akM l_akX l_akT l_akC l_akK l_akD l_akW l_akF l_akP l_akB l_akV l_akJ l_akA l_akU l_akE l_akO l_akI l_akDot
 
-#define l_any   -1
-#define l_alpha 0
-#define l_akG   1
-#define l_akM   2
-#define l_akX   3
-#define l_akT   4
-#define l_akC   5
-#define l_akK   6
-#define l_akD   7
-#define l_akW   8
-#define l_akF   9
-#define l_akP   10
-#define l_akB   11
-#define l_akV   12
-#define l_akJ   13
-#define l_akA   14
-#define l_akU   15
-#define l_akE   16
-#define l_akO   17
-#define l_akI   18
-#define l_akDot 19
-#define l_sym   20
-#define l_num   21
-#define l_fun   22
-#define l_nav   23
-#define l_cfg   24
-
-#define my_tapping_term 170
-#define my_quick_tapping_term 112
-#define my_ak_delay 40
-
-&mt {
-    tapping-term-ms = <my_tapping_term>;
-};
-&sl {
-    release-after-ms = <my_tapping_term>;
-};
-&caps_word {
-    continue-list = <UNDER MINUS BSPC DEL LEFT RIGHT>;
-};
-
-
-// #define EN_PRONOUN_COMBOS //  (I, I'm, I've I'd I'll etc)
