@@ -35,9 +35,11 @@
 &caps_word {
     continue-list = <FR_M FR_UNDERSCORE FR_MINUS DELETE BACKSPACE>;
 };
-&left_encoder1 {
-    steps = <40>;
-};
+
+&sensors { triggers-per-rotation = <36>; };
+
+&left_encoder1 { steps = <72>; };
+
 
 #include "my_helpers.dtsi"
 #include "new_macros.dtsi"
@@ -47,13 +49,13 @@
 #include "combos.dtsi"
 
 / {
-    //behaviors {
-        //left_right_up_down: left_right_up_down {
-           // compatible = "zmk,behavior-sensor-rotate";
-          //  #sensor-binding-cells = <0>;
-        //    bindings = <&up_left>, <&down_right>;
-      //  };
-    //};
+    behaviors {
+        left_right_up_down: left_right_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&up_left>, <&down_right>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -66,6 +68,7 @@
 &kp LGUI          &sk_shift_caps_word_nav1                                                                                          &lt l_nav1 SPACE  &sk_shift_caps_word_symbols
             >;
             sensor-bindings = <&inc_dec_kp C_BRI_DEC C_BRI_UP>;
+
             //sensor-bindings = <&left_right_up_down>;
         };
 
