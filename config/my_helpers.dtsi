@@ -1,0 +1,28 @@
+#define QUICK_TAP_MS 175
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_HOLD_TAP(NAME, \
+        flavor = "balanced"; \
+        tapping-term-ms = <280>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        require-prior-idle-ms = <150>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    )
+
+#define MAKE_LK(NAME, HOLD, TAP) \
+    ZMK_HOLD_TAP(NAME, \
+        tapping-term-ms = <my_tapping_term>; \
+        flavor = "tap-preferred"; \
+        bindings = <HOLD>, <TAP>; \
+    )
+
+#define MAKE_MORPH(NAME, MODS, WITHOUT_MOD, WITH_MOD) \
+    ZMK_MOD_MORPH(NAME, \
+        bindings = <WITHOUT_MOD>, <WITH_MOD>; \
+        mods = <(MODS)>; \
+    )
+
+#define MAKE_SHIFT_MORPH(NAME, WITHOUT_MOD, WITH_MOD) \
+    MAKE_MORPH(NAME, MOD_LSFT, WITHOUT_MOD, WITH_MOD)

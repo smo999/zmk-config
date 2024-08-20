@@ -1,14 +1,11 @@
 
 
-behaviors {
-
     MAKE_HRM(hm, &kp, &kp, KEYS_L KEYS_R THUMBS)
     MAKE_HRM(hmr,&kp, &kp,  KEYS_L THUMBS)
     MAKE_HRM(hml,&kp, &kp,  KEYS_R THUMBS)
 
     MAKE_HRM(hrm_t, &kp, &ak_t,  KEYS_R THUMBS)
     MAKE_HRM(hrm_c, &kp, &ak_c,  KEYS_R THUMBS) 
-
     MAKE_HRM(hrm_a, &kp, &ak_a,  KEYS_L THUMBS)
     MAKE_HRM(hrm_e, &kp, &ak_e,  KEYS_L THUMBS)
     MAKE_HRM(hrm_i, &kp, &ak_i,  KEYS_L THUMBS)
@@ -28,53 +25,30 @@ behaviors {
     MAKE_SHIFT_MORPH(apos_quotes, &kp FR_APOS, &kp FR_DOUBLE_QUOTES)
     MAKE_SHIFT_MORPH(question_excl, &kp FR_QUESTION, &kp FR_EXCL)
 
-    sltog: sltog {
-        compatible = "zmk,behavior-hold-tap";
-        bindings = <&mo>, <&my_sl1>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        flavor = "tap-preferred";
-    };
-
-    my_sl1: my_sl1 {
-        compatible = "zmk,behavior-sticky-key";
-        bindings = <&mo>;
-        #binding-cells = <1>;
-        release-after-ms = <200>;
-        quick-release;
-    };
-
-    skmo: skmo {
-        compatible = "zmk,behavior-hold-tap";
-        bindings = <&mo>, <&sk>;
-
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        flavor = "balanced";
-    };
-
-    
     MAKE_MORPH(down_right, MOD_LGUI|MOD_RGUI, &kp RIGHT, &kp DOWN)
     MAKE_MORPH(up_left   , MOD_LGUI|MOD_RGUI, &kp LEFT , &kp UP  )
 
-    left_right_up_down: left_right_up_down {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&up_left>, <&down_right>;
-    };
-    lk_space_delete: lk_space_delete { // < on tap, <|> on "linger"
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
+
+    ZMK_STICKY_KEY(my_sl1,
+        bindings = <&mo>;
+        release-after-ms = <200>;
+        quick-release;
+    )
+
+    ZMK_HOLD_TAP(space_delete,  
         tapping-term-ms = <my_tapping_term>;
         flavor = "tap-preferred";
         bindings = <&m_delete_word>, <&kp>;
-    };
+    )
 
-    skapp: sticky_key_app_switcher {
-        compatible = "zmk,behavior-sticky-key";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <900>;
-    };
-};
+    ZMK_HOLD_TAP(sltog,
+        bindings = <&mo>, <&my_sl1>;
+        tapping-term-ms = <200>;
+        flavor = "tap-preferred";
+    )
+
+    ZMK_HOLD_TAP(skmo,
+        bindings = <&mo>, <&sk>;
+        tapping-term-ms = <200>;
+        flavor = "balanced";
+    )

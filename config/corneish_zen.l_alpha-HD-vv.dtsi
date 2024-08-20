@@ -9,7 +9,7 @@ l_alpha {
         &ak_x	&ak_w	&ak_m	&ak_g	&ak_j	&HashDllr	&DotColn	&CmmaSemi	&apos_quotes	&question_excl	
         &hml LCTRL FR_S	&hrm_c LALT FR_C	&hml LSHFT FR_N	&hrm_t LGUI FR_T	&ak_k	&m_delete_word	&hrm_a RGUI FR_A	&hrm_e RSHFT FR_E	&hrm_i RALT FR_I	&hmr RCTRL FR_H 
         &ak_b	&ak_p	&kp FR_L	&ak_d	&ak_v	&MinusPlus	&ak_u	&ak_o	&ak_y	&kp FR_F 
-                    ______	&lt l_nav1 FR_R	&lt l_nav2 SPACE	&sk_shift_caps_word_symbols
+                    ______	&lt l_nav1 FR_R	&space_delete l_nav2 SPACE	&sk_shift_caps_word_symbols
     >;
 };
 

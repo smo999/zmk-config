@@ -1,0 +1,40 @@
+
+#define COMBO_LAYER(NAME, BINDINGS, KEYPOS, LAYERS) \
+  ZMK_COMBO_5(combo_##NAME, BINDINGS, KEYPOS, LAYERS,45)
+
+#define COMBO_ANY(NAME, BINDINGS, KEYPOS) \
+  COMBO_LAYER(combo_##NAME, BINDINGS, KEYPOS, ALL)
+
+COMBO_ANY(switch-layer, &mo l_config, RH1 RH0)
+
+// accent combos
+COMBO_LAYER(a-acute, &kp FR_A_GRAVE,LT4 LM4, l_default)
+COMBO_LAYER(e-grave, &kp FR_E_GRAVE, LT2 LM2, l_default)
+COMBO_LAYER(u-grave, &kp FR_U_GRAVE, LT0 LM0, l_default)
+COMBO_LAYER(e-acute, &kp FR_E_ACUTE, LM2 LB2, l_default)
+
+COMBO_LAYER(a-acute-hd, &kp FR_A_GRAVE, RM0 RM1, ls_hd)
+COMBO_LAYER(e-grave-hd, &kp FR_E_GRAVE, RM1 RM2, ls_hd)
+COMBO_LAYER(e-acute-hd, &kp FR_E_ACUTE, RM2 RM3, ls_hd)
+COMBO_LAYER(u-grave-hd, &kp FR_U_GRAVE, RB0 RB1, ls_hd)
+COMBO_LAYER(a-hat-hd,   &typeAhat, RM1 RT1, ls_hd)
+COMBO_LAYER(e-hat-hd,   &typeEhat, RM2 RT2, ls_hd)
+COMBO_LAYER(i-hat-hd,   &typeIhat, RM3 RT3, ls_hd)
+COMBO_LAYER(o-hat-hd,   &typeOhat, RM2 RB2, ls_hd)
+COMBO_LAYER(u-hat-hd,   &typeUhat, RM1 RB1, ls_hd)
+    
+COMBO_LAYER(typeQ, &lk_qu FR_Q FR_U,      LT3 LT1, ls_hd)
+COMBO_LAYER(typeZ, &kp FR_Z,           LM3 LM1, ls_hd)
+
+//
+// H Digraphs REQUIRE macros (defined earlier) to process
+//
+COMBO_LAYER(sch, &Sch,  LM4  LM3 LM2, ls_hd) // Sch
+COMBO_LAYER(tch, &Tch,  LM4  LM3 LM1, ls_hd) // Tch
+COMBO_LAYER(th,  &lk_th H T, LM2 LM1, ls_hd) // Th/sion
+COMBO_LAYER(ch,  &Ch,        LM3 LM2, ls_hd) // Ch
+COMBO_LAYER(wh,  &Wh,        LT3 LT2, ls_hd) // Wh
+COMBO_LAYER(sh,  &lk_sh H S, LM4 LM3, ls_hd) // Sh/sion
+COMBO_LAYER(gh,  &lk_gh H G, LT2 LT1, ls_hd) // Gh/gh
+COMBO_LAYER(ph,  &Ph,        LB3 LB1, ls_hd) // Ph
+
