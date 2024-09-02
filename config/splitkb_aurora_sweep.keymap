@@ -16,122 +16,28 @@
 
 #define ______  &trans
 
+#define INVERT_HD 1
+
 #define my_tapping_term 170
 #define my_quick_tapping_term 112
 #define my_ak_delay 40
 
-
-// #define EN_PRONOUN_COMBOS //  (I, I'm, I've I'd I'll etc)
-
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <200>;
+    tapping-term-ms = <200>;
 };
 
 &sl { 
     ignore-modifiers; 
     release-after-ms = <200>;
 };
+
 &caps_word {
     continue-list = <FR_M FR_UNDERSCORE FR_MINUS DELETE BACKSPACE>;
 };
 
-&sensors { triggers-per-rotation = <36>; };
-
-&left_encoder1 { steps = <72>; };
-
-
 #include "my_helpers.dtsi"
 #include "new_macros.dtsi"
-
 #include "behaviors.dtsi"
-#include "moutis_macros.dtsi"
 #include "combos.dtsi"
-
-/ {
-    behaviors {
-        left_right_up_down: left_right_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&up_left>, <&down_right>;
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            bindings = <
-&kp BACKSPACE   &kp FR_COMMA   &kp FR_DOT       &kp FR_P       &kp FR_Y    &kp FR_F  &kp FR_G       &kp FR_C         &kp FR_R     &kp FR_L
-&mt LCTRL FR_A  &mt LALT FR_O  &mt LSHIFT FR_E  &mt LGUI FR_I  &kp FR_U    &kp FR_D  &mt RGUI FR_H  &mt RSHIFT FR_T  &lt l_writing_symbols FR_N   &mt RCTRL FR_S
-&kp FR_APOS     &kp FR_Q       &kp FR_J         &kp FR_K       &kp FR_X    &kp FR_B  &kp FR_M       &kp FR_W         &kp FR_V     &kp FR_Z
-&kp LGUI          &sk_shift_caps_word_nav1                                                                                          &lt l_nav1 SPACE  &sk_shift_caps_word_symbols
-            >;
-            sensor-bindings = <&inc_dec_kp C_BRI_DEC C_BRI_UP>;
-
-            //sensor-bindings = <&left_right_up_down>;
-        };
-
-        #include "corneish_zen.l_alpha-HD-vv.dtsi"  // base (alpha) layer (& related adaptive layers)
-        
-        Symbols {
-            display-name = "l_symbols";
-            bindings = <
-&kp FR_GRAVE  &kp FR_LEFT_BRACKET  &kp FR_LEFT_BRACE  &kp FR_LEFT_PARENTHESIS  &kp FR_LESS_THAN    &kp FR_GREATER_THAN  &kp FR_RIGHT_PARENTHESIS  &kp FR_RIGHT_BRACE  &kp FR_RIGHT_BRACKET  &kp FR_ASTERISK
-&kp FR_DLLR     &kp FR_UNDER         &kp FR_MINUS       &kp FR_EQUAL             ______              ______               &kp FR_SLASH              &kp FR_PIPE         &kp FR_BACKSLASH      &kp FR_AT
-&kp FR_QUESTION   &kp FR_EXCL          &kp FR_PLUS        &kp FR_HASH              ______              &kp FR_TILDE         &kp FR_PERCENT            &kp FR_CARET              ______                &kp FR_AMPS
-______        &sltog l_numbers l_numbers                                                                                                                                             &to 0                 ______
-            >;
-        };
-
-        Numbers {
-            display-name = "l_numbers";
-            bindings = <
-______ ______ ______ ______ ______ &kp FR_COMMA  &kp FR_N7  &kp FR_N8  &kp FR_N9  &kp FR_STAR
-______ ______ ______ ______ ______ &kp FR_DOT    &kp FR_N4  &kp FR_N5  &kp FR_N6  &kp FR_PLUS
-______ ______ ______ ______ ______ &kp FR_N0     &kp FR_N1  &kp FR_N2  &kp FR_N3  &kp FR_FSLH
-                     ______   ______   &to 0      ______
-            >;
-        };
-
-        Nav2 {
-            bindings = <
-______ ______    ______ ______ ______ ______ ______ ______ ______ ______ 
-&kp FR_Z  &lk_qu FR_Q FR_U ______ ______ ______ ______ ______ ______ ______ ______
-______ ______    ______ ______ ______ ______ ______ ______ ______ ______
-                     ______ ______ ______ ______ 
-            >;
-        };
-
-        Nav {
-            bindings = <
-&kp ESCAPE    &kp BACKSPACE        ______        ______       ______              ______  ______    &kp UP    ______     &kp BACKSPACE
-&kp LG(FR_A)  &kp LS(TAB)   &kp TAB       &kp ENTER    ______              ______  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
-&kp LG(FR_Z)  &kp LG(FR_X)  &kp LG(FR_C)  &kp LG(FR_V)  &kp LS(LG(FR_V))    ______  ______    ______    ______     ______
-______        ______                                                                                    ______     ______
-            >;
-
-            sensor-bindings = <&inc_dec_kp LG(FR_Z) LG(LS(FR_Z))>;
-        };
-
-        Config {
-            bindings = <
-&bootloader  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3    ______  ______  ______  ______  ______
-______       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3     ______  &to l_default  &tog l_alpha  ______  ______
-______       &bt BT_CLR     ______         ______         ______           ______  ______  ______  ______  ______
-______       &to 0                                                                                 &to 0   ______
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_BRI_DEC C_BRI_UP>;
-        };
-
-        layer_7 {
-            bindings = <
-______  &kp FR_UMLAUT    &kp FR_CARET  &kp FR_LEFT_PARENTHESIS  &kp FR_CARET    ______  &kp FR_RIGHT_PARENTHESIS  &kp FR_C_CEDILLA  ______  ______
-______  &kp FR_QUESTION  &kp FR_EURO   &kp FR_EXCL              ______          ______  ______                    ______            ______  &kp FR_DOLLAR
-______  ______           ______        ______                   ______          ______  ______                    ______            ______  ______
-______  ______                                                                                                                      ______  ______
-            >;
-        };
-    };
-};
+#include "layers.dtsi"

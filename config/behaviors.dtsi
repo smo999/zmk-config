@@ -1,14 +1,12 @@
-
+   
 
     MAKE_HRM(hm, &kp, &kp, KEYS_L KEYS_R THUMBS)
     MAKE_HRM(hmr,&kp, &kp,  KEYS_L THUMBS)
     MAKE_HRM(hml,&kp, &kp,  KEYS_R THUMBS)
 
-    MAKE_HRM(hrm_t, &kp, &ak_t,  KEYS_R THUMBS)
-    MAKE_HRM(hrm_c, &kp, &ak_c,  KEYS_R THUMBS) 
-    MAKE_HRM(hrm_a, &kp, &ak_a,  KEYS_L THUMBS)
-    MAKE_HRM(hrm_e, &kp, &ak_e,  KEYS_L THUMBS)
-    MAKE_HRM(hrm_i, &kp, &ak_i,  KEYS_L THUMBS)
+    MAKE_HRM(hrm_t, &kp, &ak2_t,  KEYS_L THUMBS)
+    MAKE_HRM(hrm_c, &kp, &ak2_c,  KEYS_L THUMBS) 
+    MAKE_HRM(hrm_h, &kp, &ak2_h,  KEYS_R THUMBS)
 
     MAKE_LK(lk,    &kp,&kp)
     MAKE_LK(lk_qu, &kp, &Qu)
@@ -16,18 +14,31 @@
     MAKE_LK(lk_sh, &sion, &Sh)
     MAKE_LK(lk_gh, &ght, &Gh)
 
-    MAKE_SHIFT_MORPH(sk_shift_caps_word_symbols, &skmo l_symbols LSHIFT, &caps_word)
-    MAKE_SHIFT_MORPH(sk_shift_caps_word_nav1, &skmo l_nav1 LSHIFT, &caps_word)
+    MAKE_SHIFT_MORPH(sk_shift_caps_word, &sk LSHIFT, &caps_word)
     MAKE_SHIFT_MORPH(CmmaSemi, &kp FR_COMMA, &kp FR_SEMICOLON)
-    MAKE_SHIFT_MORPH(DotColn, &dot_ak, &kp FR_COLON)
+    MAKE_SHIFT_MORPH(DotColn, &ak2_dot, &kp FR_COLON)
     MAKE_SHIFT_MORPH(HashDllr, &kp FR_HASH, &kp FR_DLLR)
     MAKE_SHIFT_MORPH(MinusPlus, &kp FR_MINUS, &kp FR_PLUS)
     MAKE_SHIFT_MORPH(apos_quotes, &kp FR_APOS, &kp FR_DOUBLE_QUOTES)
     MAKE_SHIFT_MORPH(question_excl, &kp FR_QUESTION, &kp FR_EXCL)
 
-    MAKE_MORPH(down_right, MOD_LGUI|MOD_RGUI, &kp RIGHT, &kp DOWN)
-    MAKE_MORPH(up_left   , MOD_LGUI|MOD_RGUI, &kp LEFT , &kp UP  )
+    MAKE_SHIFT_MORPH(pair_par, &m_pair_par , &kp FR_LPAR)
+    MAKE_SHIFT_MORPH(pair_brc, &m_pair_brc , &kp FR_LBRC)
+    MAKE_SHIFT_MORPH(pair_bkt, &m_pair_bkt , &kp FR_LBKT)
 
+    #define VIRG ,
+    
+    MAKE_AK(ak2_x, &kp FR_X, <&kp FR_T> VIRG < &kp FR_B> VIRG < &kp FR_S>, <FR_G FR_M FR_W>)
+    MAKE_AK(ak2_w, &kp FR_W, <&kp FR_D> VIRG < &kp FR_P> VIRG < &kp FR_P>, <FR_G FR_M  FR_X>)
+    MAKE_AK(ak2_m, &kp FR_M, <&kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L>, <FR_G FR_X FR_P>)
+    MAKE_AK(ak2_g, &kp FR_G, <&kp FR_K>, <FR_C>)
+    MAKE_AK(ak2_t, &kp FR_T, <&kp FR_N>, <FR_K>)
+    MAKE_AK(ak2_c, &kp FR_C, <&kp FR_S>, <FR_B>)
+    MAKE_AK(ak2_k, &kp FR_K, <&ck>, <FR_T >)
+    MAKE_AK(ak2_b, &kp FR_B, <&kp FR_V>, <FR_D >)
+    MAKE_AK(ak2_p, &kp FR_P, <&kp FR_S>, <FR_B >)
+    MAKE_AK(ak2_h, &kp FR_H, <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG < &kp FR_I>, <FR_A FR_U  FR_E FR_O FR_I FR_APOS>)
+    MAKE_AK(ak2_dot, &kp FR_DOT, <&kp FR_O>, <FR_APOS>)
 
     ZMK_STICKY_KEY(my_sl1,
         bindings = <&mo>;
@@ -37,8 +48,10 @@
 
     ZMK_HOLD_TAP(space_delete,  
         tapping-term-ms = <my_tapping_term>;
-        flavor = "tap-preferred";
-        bindings = <&m_delete_word>, <&kp>;
+        flavor = "balanced";
+        hold-trigger-key-positions = <RT2 RM1 RM2 RM3>;
+        hold-trigger-on-release; 
+        bindings = <&m_select_and_delete>, <&kp>;
     )
 
     ZMK_HOLD_TAP(sltog,
