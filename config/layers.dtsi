@@ -7,7 +7,7 @@
             display-name = "HD-Vb";										
             bindings = <										
                 INVERT(&question_excl	,&CmmaSemi	,&DotColn	,&apos_quotes	,&HashDllr	,&kp FR_J	,&kp FR_G	,&ak2_m	,&ak2_w	,&ak2_x)
-                INVERT(&hrm_h LCTRL H 	,&hml RALT FR_A	,&hml RSHFT FR_E	,&hml RGUI FR_I	,&m_delete_word	,&ak2_k	,&hrm_t LGUI FR_T	,&hmr LSHFT FR_N	,&hrm_c LALT FR_C	,&hmr LCTRL FR_S)
+                INVERT(&hrm_h LCTRL H 	,&hml RALT FR_A	,&hml RSHFT FR_E	,&hml RGUI FR_I	,&kp BACKSPACE	,&ak2_k	,&hrm_t LGUI FR_T	,&hmr LSHFT FR_N	,&hrm_c LALT FR_C	,&hmr LCTRL FR_S)
                 INVERT(&kp FR_F 	,&kp FR_Y	,&kp FR_O	,&kp FR_U	,&MinusPlus	,&kp FR_V	,&kp FR_D	,&kp FR_L	,&ak2_p	,&ak2_b)
                             &sk_shift_caps_word	&lt l_nav1 FR_R	&space_delete 0 SPACE	&sltog l_sym l_sym
             >;											
@@ -16,7 +16,7 @@
         Symbols {
             display-name = "l_sym";
             bindings = <
-                &kp FR_GRAVE	&pair_bkt	&pair_brc	&m_pair_par	&kp FR_LESS_THAN	&kp FR_GREATER_THAN	&kp FR_RIGHT_PARENTHESIS	&kp FR_RIGHT_BRACE	&kp FR_RIGHT_BRACKET	&kp FR_ASTERISK
+                &kp FR_GRAVE	&pair_bkt	&pair_brc	&m_pair_par	______	______	&kp FR_RIGHT_PARENTHESIS	&kp FR_RIGHT_BRACE	&kp FR_RIGHT_BRACKET	&kp FR_ASTERISK
                 &kp FR_DLLR     &kp FR_UNDER	&kp FR_MINUS	&kp FR_EQUAL	&kp FR_LESS_THAN	&kp FR_GREATER_THAN	&kp FR_SLASH	&kp FR_PIPE	&kp FR_BACKSLASH	&kp FR_AT	
                 &kp FR_EURO     &kp FR_EXCL	&kp FR_PLUS	&kp FR_HASH	______	&kp FR_TILDE	&kp FR_PERCENT	&kp FR_CARET	&kp FR_QUESTION	&kp FR_AMPS
                             ______	&sltog l_num l_num	&to 0	______
@@ -27,9 +27,9 @@
             display-name = "l_num";
             bindings = <
                 ______	______	______	______	______	&kp FR_COMMA	&kp FR_N7	&kp FR_N8	&kp FR_N9	&kp FR_STAR
-                ______	______	______	______	______	&kp FR_DOT	&kp FR_N4	&kp FR_N5	&kp FR_N6	&kp FR_PLUS
-                ______	______	______	______	______	&kp FR_N0	&kp FR_N1	&kp FR_N2	&kp FR_N3	&kp FR_FSLH
-                            ______	______	&to 0	______
+                ______	______	______	______	______	&kp FR_DOT	    &kp FR_N4	&kp FR_N5	&kp FR_N6	&kp FR_PLUS
+                ______	______	______	______	______	&kp FR_N0	    &kp FR_N1	&kp FR_N2	&kp FR_N3	&kp FR_FSLH
+                                        ______	______	    ______  ______
             >;
         };
 

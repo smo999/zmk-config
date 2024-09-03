@@ -37,7 +37,9 @@
     MAKE_AK(ak2_k, &kp FR_K, <&ck>, <FR_T >)
     MAKE_AK(ak2_b, &kp FR_B, <&kp FR_V>, <FR_D >)
     MAKE_AK(ak2_p, &kp FR_P, <&kp FR_S>, <FR_B >)
-    MAKE_AK(ak2_h, &kp FR_H, <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG < &kp FR_I>, <FR_A FR_U  FR_E FR_O FR_I FR_APOS>)
+    MAKE_AK(ak2_h, &kp FR_H, 
+        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG < &kp FR_I> VIRG <&z>  VIRG <&v>  VIRG <&j>  VIRG <&bk_qu> VIRG <&k> , 
+        <FR_A FR_U  FR_E FR_O FR_I FR_APOS FR_S FR_B FR_G FR_T FR_C>)
     MAKE_AK(ak2_dot, &kp FR_DOT, <&kp FR_O>, <FR_APOS>)
 
     ZMK_STICKY_KEY(my_sl1,
