@@ -1,62 +1,34 @@
 
 #define COMBO_LAYER(NAME, BINDINGS, KEYPOS, LAYERS) \
-  ZMK_COMBO_5(combo_##NAME, BINDINGS, KEYPOS, LAYERS,45)
+  ZMK_COMBO_5(combo_##NAME, BINDINGS, KEYPOS, LAYERS,25)
 
 #define COMBO_ANY(NAME, BINDINGS, KEYPOS) \
   COMBO_LAYER(combo_##NAME, BINDINGS, KEYPOS, ALL)
 
 COMBO_ANY(switch-layer, &mo l_conf, RH1 RH0)
 
-#ifdef INVERT_HD
+COMBO_LAYER(a-acute-hd, &kp FR_A_GRAVE, RM0 RM1, l_alpha)
+COMBO_LAYER(e-grave-hd, &kp FR_E_GRAVE, RM1 RM2, l_alpha)
+COMBO_LAYER(e-acute-hd, &kp FR_E_ACUTE, RM2 RM3, l_alpha)
+COMBO_LAYER(u-grave-hd, &kp FR_U_GRAVE, RB0 RB1, l_alpha)
+COMBO_LAYER(a-hat-hd,   &typeAhat, RM1 RT1, l_alpha)
+COMBO_LAYER(e-hat-hd,   &typeEhat, RM2 RT2, l_alpha)
+COMBO_LAYER(i-hat-hd,   &typeIhat, RM3 RT3, l_alpha)
+COMBO_LAYER(o-hat-hd,   &typeOhat, RM2 RB2, l_alpha)
+COMBO_LAYER(u-hat-hd,   &typeUhat, RM1 RB1, l_alpha)
+    
+COMBO_LAYER(typeQ, &lk_qu FR_Q FR_U,      LB3 LB1, l_alpha)
+COMBO_LAYER(typeZ, &kp FR_Z,              LM3 LM1, l_alpha)
 
-  COMBO_LAYER(a-acute-hd, &kp FR_A_GRAVE, RM0 RM1, l_alpha)
-  COMBO_LAYER(e-grave-hd, &kp FR_E_GRAVE, RM1 RM2, l_alpha)
-  COMBO_LAYER(e-acute-hd, &kp FR_E_ACUTE, RM2 RM3, l_alpha)
-  COMBO_LAYER(u-grave-hd, &kp FR_U_GRAVE, RB0 RB1, l_alpha)
-  COMBO_LAYER(a-hat-hd,   &typeAhat, RM1 RT1, l_alpha)
-  COMBO_LAYER(e-hat-hd,   &typeEhat, RM2 RT2, l_alpha)
-  COMBO_LAYER(i-hat-hd,   &typeIhat, RM3 RT3, l_alpha)
-  COMBO_LAYER(o-hat-hd,   &typeOhat, RM2 RB2, l_alpha)
-  COMBO_LAYER(u-hat-hd,   &typeUhat, RM1 RB1, l_alpha)
-      
-  COMBO_LAYER(typeQ, &lk_qu FR_Q FR_U,      LT3 LT1, l_alpha)
-  COMBO_LAYER(typeZ, &kp FR_Z,           LM3 LM1, l_alpha)
-
-  //
-  // H Digraphs REQUIRE macros (defined earlier) to process
-  //
-  COMBO_LAYER(sch, &Sch,  LM4  LM3 LM2, l_alpha) // Sch
-  COMBO_LAYER(tch, &Tch,  LM4  LM3 LM1, l_alpha) // Tch
-  COMBO_LAYER(th,  &lk_th H T, LM2 LM1, l_alpha) // Th/sion
-  COMBO_LAYER(ch,  &Ch,        LM3 LM2, l_alpha) // Ch
-  COMBO_LAYER(wh,  &Wh,        LT3 LT2, l_alpha) // Wh
-  COMBO_LAYER(sh,  &lk_sh H S, LM4 LM3, l_alpha) // Sh/sion
-  COMBO_LAYER(gh,  &lk_gh H G, LT2 LT1, l_alpha) // Gh/gh
-  COMBO_LAYER(ph,  &Ph,        LB3 LB1, l_alpha) // Ph
-#else
-  COMBO_LAYER(a-acute-hd, &kp FR_A_GRAVE, LM0 LM1, l_alpha)
-  COMBO_LAYER(e-grave-hd, &kp FR_E_GRAVE, LM1 LM2, l_alpha)
-  COMBO_LAYER(e-acute-hd, &kp FR_E_ACUTE, LM2 LM3, l_alpha)
-  COMBO_LAYER(u-grave-hd, &kp FR_U_GRAVE, LB0 LB1, l_alpha)
-  COMBO_LAYER(a-hat-hd,   &typeAhat, LM3 LT3, l_alpha)
-  COMBO_LAYER(e-hat-hd,   &typeEhat, LM2 LT2, l_alpha)
-  COMBO_LAYER(i-hat-hd,   &typeIhat, LM1 LT1, l_alpha)
-  COMBO_LAYER(o-hat-hd,   &typeOhat, LM2 LB2, l_alpha)
-  COMBO_LAYER(u-hat-hd,   &typeUhat, LM1 LB1, l_alpha)
-      
-  COMBO_LAYER(typeQ, &lk_qu FR_Q FR_U,      RT3 RT1, l_alpha)
-  COMBO_LAYER(typeZ, &kp FR_Z,           RM3 RM1, l_alpha)
-
-  //
-  // H Digraphs REQUIRE macros (defined earlier) to process
-  //
-  COMBO_LAYER(sch, &Sch,  RM4  RM3 RM2, l_alpha) // Sch
-  COMBO_LAYER(tch, &Tch,  RM4  RM3 RM1, l_alpha) // Tch
-  COMBO_LAYER(th,  &lk_th H T, RM2 RM1, l_alpha) // Th/sion
-  COMBO_LAYER(ch,  &Ch,        RM3 RM2, l_alpha) // Ch
-  COMBO_LAYER(wh,  &Wh,        RT3 RT2, l_alpha) // Wh
-  COMBO_LAYER(sh,  &lk_sh H S, RM4 RM3, l_alpha) // Sh/sion
-  COMBO_LAYER(gh,  &lk_gh H G, RT2 RT1, l_alpha) // Gh/gh
-  COMBO_LAYER(ph,  &Ph,        RB3 RB1, l_alpha) // Ph
-
-#endif
+//
+// H Digraphs REQUIRE macros (defined earlier) to process
+//
+COMBO_LAYER(sch, &Sch,  LM4  LM3 LM2, l_alpha) // Sch
+COMBO_LAYER(tch, &Tch,  LM4  LM3 LM1, l_alpha) // Tch
+COMBO_LAYER(th,  &lk_th H T, LM2 LM1, l_alpha) // Th/sion
+COMBO_LAYER(ch,  &Ch,        LM3 LM2, l_alpha) // Ch
+COMBO_LAYER(wh,  &Wh,        LT3 LT2, l_alpha) // Wh
+COMBO_LAYER(sh,  &lk_sh H S, LM4 LM3, l_alpha) // Sh/sion
+COMBO_LAYER(gh,  &lk_gh H G, LT2 LT1, l_alpha) // Gh/gh
+COMBO_LAYER(ph,  &Ph,        LB3 LB2, l_alpha) // Ph
+COMBO_LAYER(gu,  &Gu,        LT0 LT1, l_alpha) // Gu

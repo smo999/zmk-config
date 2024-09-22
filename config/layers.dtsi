@@ -5,14 +5,15 @@
 
         l_alpha {											
             display-name = "HD-Vb";										
-            bindings = <										
-                INVERT(&question_excl	,&CmmaSemi	,&DotColn	,&apos_quotes	,&HashDllr	,&kp FR_J	,&kp FR_G	,&ak2_m	,&ak2_w	,&ak2_x)
-                INVERT(&hrm_h LCTRL H 	,&hml RALT FR_A	,&hml RSHFT FR_E	,&hml RGUI FR_I	,&kp BACKSPACE	,&ak2_k	,&hrm_t LGUI FR_T	,&hmr LSHFT FR_N	,&hrm_c LALT FR_C	,&hmr LCTRL FR_S)
-                INVERT(&kp FR_F 	,&kp FR_Y	,&kp FR_O	,&kp FR_U	,&MinusPlus	,&kp FR_V	,&kp FR_D	,&kp FR_L	,&ak2_p	,&ak2_b)
-                            &sk_shift_caps_word	&lt l_nav1 FR_R	&space_delete 0 SPACE	&sltog l_sym l_sym
+            bindings = <	
+                &ak_x	&ak_w		&ak_m		&kp FR_G		&kp FR_J		&HashDllr		&apos_quotes		&DotColn		&ak_comma		&ak_quest
+                &hmr LCTRL FR_S		&hrm_c LALT FR_C		&hmr LSHFT FR_N		&hrm_t LGUI FR_T		&ak_k		&kp ENTER		&hml RGUI FR_I		&hml RSHFT FR_E		&hml RALT FR_A		&hrm_h LCTRL H
+                &ak_b	&ak_p		&kp FR_L		&kp FR_D		&kp FR_V		&MinusPlus		&kp FR_U		&kp FR_O		&ak_y		&kp FR_F
+                           &sk_shift_caps_word	&lt l_nav1 FR_R	&space_delete 0 SPACE	&sltog l_sym l_sym
             >;											
         };											
 	
+
         Symbols {
             display-name = "l_sym";
             bindings = <
@@ -44,9 +45,9 @@
 
         Nav {
             bindings = <
-                &kp ESCAPE	&kp BACKSPACE	______	______	______	______	______	&kp UP	______	______
-                &kp LG(FR_A)	&kp LS(TAB)	&kp TAB	&kp ENTER	______	______	&kp LEFT	&kp DOWN	&kp RIGHT	______
-                &kp LG(FR_Z)	&kp LG(FR_X)	&kp LG(FR_C)	&kp LG(FR_V)	&kp LS(LG(FR_V))	______	______	______	______	______
+                &kp ESCAPE	&kp BACKSPACE	______	______	______	                                ______	______	&kp UP	______	______
+                &kp LG(FR_A)	&kp LS(TAB)	&kp TAB	&kp ENTER	______	                            &kp LG(LEFT)	&kp LEFT	&kp DOWN	&kp RIGHT	&kp LG(RIGHT)
+                &kp LG(FR_Z)	&kp LG(FR_X)	&kp LG(FR_C)	&kp LG(FR_V)	&kp LS(LG(FR_V))	______	&kp LA(LEFT)	______	&kp LA(RIGHT)	______
                             ______	______	______	______
             >;
         };

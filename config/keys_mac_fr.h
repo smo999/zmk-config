@@ -294,7 +294,7 @@
 #define FR_RBRC (FR_RIGHT_BRACE)
 
 /* ~ */
-#define FR_TILDE (RA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_2_AND_AT)))
+#define FR_TILDE (RA(FR_N))
 
 /* £ */
 #define FR_POUND_SIGN (LS(FR_AT_SIGN))

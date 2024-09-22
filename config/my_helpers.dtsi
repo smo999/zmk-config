@@ -35,11 +35,5 @@
             defaults = <DEF>; \
             bindings = BINDS; \
             antecedents = ANTS; \
-            max-delay-ms = <250>; \
+            max-delay-ms = <my_ak_delay>; \
         )
-
-#ifdef INVERT_HD
-  #define INVERT(V1,V2,V3,V4,V5,V6,V7,V8,V9,V10)	V10 V9 V8 V7 V6 V5 V4 V3 V2 V1
-#else 
-  #define INVERT(V1,V2,V3,V4,V5,V6,V7,V8,V9,V10)	V1 V2 V3 V4 V5 V6 V7 V8 V9 V10
-#endif

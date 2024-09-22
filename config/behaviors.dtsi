@@ -4,9 +4,9 @@
     MAKE_HRM(hmr,&kp, &kp,  KEYS_L THUMBS)
     MAKE_HRM(hml,&kp, &kp,  KEYS_R THUMBS)
 
-    MAKE_HRM(hrm_t, &kp, &ak2_t,  KEYS_L THUMBS)
-    MAKE_HRM(hrm_c, &kp, &ak2_c,  KEYS_L THUMBS) 
-    MAKE_HRM(hrm_h, &kp, &ak2_h,  KEYS_R THUMBS)
+    MAKE_HRM(hrm_t, &kp, &ak_t,  KEYS_L THUMBS)
+    MAKE_HRM(hrm_c, &kp, &ak_c,  KEYS_L THUMBS) 
+    MAKE_HRM(hrm_h, &kp, &ak_h,  KEYS_R THUMBS)
 
     MAKE_LK(lk,    &kp,&kp)
     MAKE_LK(lk_qu, &kp, &Qu)
@@ -16,7 +16,7 @@
 
     MAKE_SHIFT_MORPH(sk_shift_caps_word, &sk LSHIFT, &caps_word)
     MAKE_SHIFT_MORPH(CmmaSemi, &kp FR_COMMA, &kp FR_SEMICOLON)
-    MAKE_SHIFT_MORPH(DotColn, &ak2_dot, &kp FR_COLON)
+    MAKE_SHIFT_MORPH(DotColn, &ak_dot, &kp FR_COLON)
     MAKE_SHIFT_MORPH(HashDllr, &kp FR_HASH, &kp FR_DLLR)
     MAKE_SHIFT_MORPH(MinusPlus, &kp FR_MINUS, &kp FR_PLUS)
     MAKE_SHIFT_MORPH(apos_quotes, &kp FR_APOS, &kp FR_DOUBLE_QUOTES)
@@ -28,19 +28,24 @@
 
     #define VIRG ,
     
-    MAKE_AK(ak2_x, &kp FR_X, <&kp FR_T> VIRG < &kp FR_B> VIRG < &kp FR_S>, <FR_G FR_M FR_W>)
-    MAKE_AK(ak2_w, &kp FR_W, <&kp FR_D> VIRG < &kp FR_P> VIRG < &kp FR_P>, <FR_G FR_M  FR_X>)
-    MAKE_AK(ak2_m, &kp FR_M, <&kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L>, <FR_G FR_X FR_P>)
-    MAKE_AK(ak2_g, &kp FR_G, <&kp FR_K>, <FR_C>)
-    MAKE_AK(ak2_t, &kp FR_T, <&kp FR_N>, <FR_K>)
-    MAKE_AK(ak2_c, &kp FR_C, <&kp FR_S>, <FR_B>)
-    MAKE_AK(ak2_k, &kp FR_K, <&ck>, <FR_T >)
-    MAKE_AK(ak2_b, &kp FR_B, <&kp FR_V>, <FR_D >)
-    MAKE_AK(ak2_p, &kp FR_P, <&kp FR_S>, <FR_B >)
-    MAKE_AK(ak2_h, &kp FR_H, 
-        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG < &kp FR_I> VIRG <&z>  VIRG <&v>  VIRG <&j>  VIRG <&bk_qu> VIRG <&k> , 
+    MAKE_AK(ak_x, &kp FR_X, <&kp FR_T> VIRG < &kp FR_B> VIRG < &kp FR_S>, <FR_G FR_M FR_W>)
+    MAKE_AK(ak_w, &kp FR_W, <&kp FR_D> VIRG < &kp FR_P> VIRG < &kp FR_P>, <FR_G FR_M FR_X>)
+    MAKE_AK(ak_m, &kp FR_M, <&kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L>, <FR_G FR_X FR_P FR_B FR_W>)
+    MAKE_AK(ak_g, &kp FR_G, <&kp FR_K>, <FR_C>)
+    MAKE_AK(ak_t, &kp FR_T, <&kp FR_N>, <FR_K>)
+    MAKE_AK(ak_c, &kp FR_C, <&kp FR_S>, <FR_B>)
+    MAKE_AK(ak_k, &kp FR_K, <&nk>, <FR_T >)
+    MAKE_AK(ak_b, &kp FR_B, <&kp FR_V>, <FR_D >)
+    MAKE_AK(ak_p, &kp FR_P, <&kp FR_S> VIRG <&kp FR_W>, <FR_B FR_D>)
+    MAKE_AK(ak_h, &kp FR_H, 
+        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG < &kp FR_U> VIRG <&z>  VIRG <&v>  VIRG <&j>  VIRG <&bk_qu> VIRG <&k> , 
         <FR_A FR_U  FR_E FR_O FR_I FR_APOS FR_S FR_B FR_G FR_T FR_C>)
-    MAKE_AK(ak2_dot, &kp FR_DOT, <&kp FR_O>, <FR_APOS>)
+    
+    MAKE_AK(ak_y, &kp FR_Y, <&kp FR_A>, <FR_F>)
+
+    MAKE_AK(ak_comma, &CmmaSemi, <&cedilla> VIRG <&kp FR_Y>, <FR_C FR_APOS>)
+    MAKE_AK(ak_dot, &kp FR_DOT, <&kp FR_O>, <FR_APOS>)
+    MAKE_AK(ak_quest, &question_excl, <&kp FR_I>, <FR_APOS>)
 
     ZMK_STICKY_KEY(my_sl1,
         bindings = <&mo>;
