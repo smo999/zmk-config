@@ -1,20 +1,29 @@
-   
+   ZMK_TAP_DANCE(td_shift_capsword, \
+                    tapping-term-ms = <200>;  \
+                    bindings = <&sk LSHIFT>, <&caps_word>;)
 
-    MAKE_HRM(hm, &kp, &kp, KEYS_L KEYS_R THUMBS)
-    MAKE_HRM(hmr,&kp, &kp,  KEYS_L THUMBS)
-    MAKE_HRM(hml,&kp, &kp,  KEYS_R THUMBS)
+    MAKE_HRM(hm, &kp, &kp, KEYS_C KEYS_V THUMBS)
+    MAKE_HRM(hmc,&kp, &kp,  KEYS_V THUMBS)
+    MAKE_HRM(hmv,&kp, &kp,  KEYS_C THUMBS)
 
-    MAKE_HRM(hrm_t, &kp, &ak_t,  KEYS_L THUMBS)
-    MAKE_HRM(hrm_c, &kp, &ak_c,  KEYS_L THUMBS) 
-    MAKE_HRM(hrm_h, &kp, &ak_h,  KEYS_R THUMBS)
+    MAKE_HRM_NAV(hmr_nav, &kp, &kp,  KEYS_R THUMBS)
+
+    MAKE_HRM(hrm_e, &kp, &ak_e,  KEYS_C THUMBS)
+
+    MAKE_HRM(hrm_d, &kp, &ak_d,  KEYS_V THUMBS)
+    MAKE_HRM(hrm_t, &kp, &kp,    KEYS_V THUMBS)
+    MAKE_HRM(hrm_s, &kp, &kp,    KEYS_V THUMBS)
+    MAKE_HRM(hrm_h, &mo, &ak_h,  KEYS_C THUMBS)
 
     MAKE_LK(lk,    &kp,&kp)
     MAKE_LK(lk_qu, &kp, &Qu)
+    MAKE_LK(lk_ch, &Ch, &kp)
     MAKE_LK(lk_th, &tion, &Th)
     MAKE_LK(lk_sh, &sion, &Sh)
     MAKE_LK(lk_gh, &ght, &Gh)
 
-    MAKE_SHIFT_MORPH(sk_shift_caps_word, &sk LSHIFT, &caps_word)
+    MAKE_SHIFT_MORPH(aug_sym, &sl l_aug, &tog l_mouse)
+    MAKE_SHIFT_MORPH(shift_capsword, &ak_magic, &caps_word)
     MAKE_SHIFT_MORPH(CmmaSemi, &kp FR_COMMA, &kp FR_SEMICOLON)
     MAKE_SHIFT_MORPH(DotColn, &ak_dot, &kp FR_COLON)
     MAKE_SHIFT_MORPH(HashDllr, &kp FR_HASH, &kp FR_DLLR)
@@ -22,36 +31,59 @@
     MAKE_SHIFT_MORPH(apos_quotes, &kp FR_APOS, &kp FR_DOUBLE_QUOTES)
     MAKE_SHIFT_MORPH(question_excl, &kp FR_QUESTION, &kp FR_EXCL)
 
+    MAKE_SHIFT_MORPH(caret_trema, &kp FR_CARET, &kp FR_UMLAUT)
+    MAKE_SHIFT_MORPH(grave_tilde, &kp FR_TILDE, &kp FR_GRAVE)
+
     MAKE_SHIFT_MORPH(pair_par, &m_pair_par , &kp FR_LPAR)
     MAKE_SHIFT_MORPH(pair_brc, &m_pair_brc , &kp FR_LBRC)
     MAKE_SHIFT_MORPH(pair_bkt, &m_pair_bkt , &kp FR_LBKT)
 
     #define VIRG ,
     
-    MAKE_AK(ak_x, &kp FR_X, <&kp FR_T> VIRG < &kp FR_B> VIRG < &kp FR_S>, <FR_G FR_M FR_W>)
-    MAKE_AK(ak_w, &kp FR_W, <&kp FR_D> VIRG < &kp FR_P> VIRG < &kp FR_P>, <FR_G FR_M FR_X>)
-    MAKE_AK(ak_m, &kp FR_M, <&kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L> VIRG < &kp FR_L>, <FR_G FR_X FR_P FR_B FR_W>)
-    MAKE_AK(ak_g, &kp FR_G, <&kp FR_K>, <FR_C>)
-    MAKE_AK(ak_t, &kp FR_T, <&kp FR_N>, <FR_K>)
-    MAKE_AK(ak_c, &kp FR_C, <&kp FR_S>, <FR_B>)
-    MAKE_AK(ak_k, &kp FR_K, <&nk>, <FR_T >)
-    MAKE_AK(ak_b, &kp FR_B, <&kp FR_V>, <FR_D >)
-    MAKE_AK(ak_p, &kp FR_P, <&kp FR_S> VIRG <&kp FR_W>, <FR_B FR_D>)
-    MAKE_AK(ak_h, &kp FR_H, 
-        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG < &kp FR_U> VIRG <&z>  VIRG <&v>  VIRG <&j>  VIRG <&bk_qu> VIRG <&k> , 
-        <FR_A FR_U  FR_E FR_O FR_I FR_APOS FR_S FR_B FR_G FR_T FR_C>)
-    
-    MAKE_AK(ak_y, &kp FR_Y, <&kp FR_A>, <FR_F>)
+    MAKE_AK(ak_magic, &sk LSHIFT, 
+        <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H>  VIRG <&kp FR_H> 
+        VIRG <&cedilla> VIRG <&a_grave> VIRG <&e_acute> VIRG <&e_grave> VIRG <&o_hat> VIRG <&u_grave>
+        VIRG <&ij> VIRG <&kp FR_L>
+        VIRG <&triple_apos> VIRG <&triple_double_quote>
+        VIRG <&sk LSHIFT>,
+        <FR_T  FR_S FR_G FR_P FR_W FR_C
+         FR_COMMA FR_A FR_I FR_E FR_O FR_U
+         FR_Y FR_L
+         FR_APOS FR_DOUBLE_QUOTES
+         SPACE
+         >)
+
+    MAKE_AK(ak_magic2, &kp FR_H, 
+        <&ion> VIRG <&ion> VIRG <&ion> VIRG <&ent> VIRG <&ent> VIRG <&tte>,
+        <FR_S FR_T FR_N FR_M FR_I FR_E>
+    )
+    MAKE_LK(lk_magic2, &mo, &ak_magic2, hold-trigger-key-positions = <RB1 RB2 RB3>; )
+
+    ZMK_HOLD_TAP(ht_mbl, 
+        flavor = "hold-preferred"; 
+        tapping-term-ms = <280>;
+        bindings = <&mo>, <&ak_magic>; 
+        hold-trigger-key-positions = <RB1 RB2 RB3>; 
+    )
+
+    ZMK_HOLD_TAP(apos_mbl, 
+        flavor = "hold-preferred"; 
+        tapping-term-ms = <280>;
+        bindings = <&mo>, <&ak_h>; 
+        hold-trigger-key-positions = <RB1 RB2 RB3>; 
+    )
+
+    MAKE_AK(ak_x, &kp FR_X, <&kp FR_T>, <FR_L>)
+    MAKE_AK(ak_e, &kp FR_E, <&ae>, <FR_A>)
+    MAKE_AK(ak_g, &kp FR_G, <&kp FR_L> VIRG <&kp FR_L>, <FR_C FR_F>)
+    MAKE_AK(ak_c, &lk_ch FR_H FR_C, <&kp FR_L>, <FR_G>)
+    MAKE_AK(ak_d, &kp FR_D, <&kp FR_L>, <FR_T>)
+    MAKE_AK(ak_h, &apos_quotes, 
+        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U>, 
+        <FR_A FR_U  FR_E FR_O FR_I>)
 
     MAKE_AK(ak_comma, &CmmaSemi, <&cedilla> VIRG <&kp FR_Y>, <FR_C FR_APOS>)
     MAKE_AK(ak_dot, &kp FR_DOT, <&kp FR_O>, <FR_APOS>)
-    MAKE_AK(ak_quest, &question_excl, <&kp FR_I>, <FR_APOS>)
-
-    ZMK_STICKY_KEY(my_sl1,
-        bindings = <&mo>;
-        release-after-ms = <200>;
-        quick-release;
-    )
 
     ZMK_HOLD_TAP(space_delete,  
         tapping-term-ms = <my_tapping_term>;
@@ -61,14 +93,27 @@
         bindings = <&m_select_and_delete>, <&kp>;
     )
 
-    ZMK_HOLD_TAP(sltog,
-        bindings = <&mo>, <&my_sl1>;
+    ZMK_HOLD_TAP(tt,  
+        tapping-term-ms = <my_tapping_term>;
+        flavor = "tap-preferred";
+        bindings = <&tog>, <&kp>;
+    )
+
+
+    ZMK_STICKY_KEY(my_sl1,
+        bindings = <&mo>;
+        release-after-ms = <200>;
+        quick-release;
+    )
+
+    ZMK_HOLD_TAP(slmo,
+        bindings = <&mo>, <&sl>;
         tapping-term-ms = <200>;
         flavor = "tap-preferred";
     )
 
-    ZMK_HOLD_TAP(skmo,
-        bindings = <&mo>, <&sk>;
+    ZMK_HOLD_TAP(sltog,
+        bindings = <&tog>, <&sl>;
         tapping-term-ms = <200>;
-        flavor = "balanced";
+        flavor = "tap-preferred";
     )

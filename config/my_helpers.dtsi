@@ -1,21 +1,40 @@
 #define QUICK_TAP_MS 175
 
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+#define HYPER(K) LG(LS(LA(LC(K))))
+#define META(K)  LG(LA(LC(K)))
+
+
+#ifdef INVERT_HD
+  #define INVERT(V1,V2,V3,V4,V5,V6,V7,V8,V9,V10)	V10 V9 V8 V7 V6 V5 V4 V3 V2 V1
+#else 
+  #define INVERT(V1,V2,V3,V4,V5,V6,V7,V8,V9,V10)	V1 V2 V3 V4 V5 V6 V7 V8 V9 V10
+#endif
+
+#define MAKE_HRM_NAV(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_HOLD_TAP(NAME, \
+        flavor = "balanced"; \
+        tapping-term-ms = <280>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+    )
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS,...) \
     ZMK_HOLD_TAP(NAME, \
         flavor = "balanced"; \
         tapping-term-ms = <280>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <150>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
+        __VA_ARGS__ \
     )
 
-#define MAKE_LK(NAME, HOLD, TAP) \
+#define MAKE_LK(NAME, HOLD, TAP, ...) \
     ZMK_HOLD_TAP(NAME, \
         tapping-term-ms = <my_tapping_term>; \
         flavor = "tap-preferred"; \
         bindings = <HOLD>, <TAP>; \
+        __VA_ARGS__ \
     )
 
 #define MAKE_MORPH(NAME, MODS, WITHOUT_MOD, WITH_MOD) \

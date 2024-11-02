@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define INVERT_HD 1
+
 #include "keys_mac_fr.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -16,15 +18,15 @@
 
 #define ______  &trans
 
-//#define INVERT_HD 1
 
 #define my_tapping_term 170
 #define my_quick_tapping_term 112
-#define my_ak_delay 120
+#define my_ak_delay 500
 
 &lt {
-    tapping-term-ms = <300>;
-    require-prior-idle-ms = <150>;
+    flavor = "balanced";
+    tapping-term-ms = <150>;
+    retro-tap;
 };
 &mt {
     flavor = "tap-preferred";
@@ -36,8 +38,12 @@
     release-after-ms = <200>;
 };
 
+&sk {
+    quick-release;
+};
+
 &caps_word {
-    continue-list = <FR_M LSHIFT FR_UNDERSCORE FR_MINUS DELETE BACKSPACE>;
+    continue-list = <LGUI LEFT RIGHT FR_M LSHIFT FR_UNDERSCORE FR_MINUS DELETE BACKSPACE>;
 };
 
 #include "my_helpers.dtsi"

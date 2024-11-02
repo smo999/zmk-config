@@ -1,19 +1,11 @@
 
 #define MY_MACRO(NAME, ...) \
         ZMK_MACRO(NAME, \
-                wait-ms = <10>; \
-                tap-ms = <10>; \
+                wait-ms = <30>;\
+                tap-ms = <30>;\
                 bindings = __VA_ARGS__; \
         )
 
-ZMK_MACRO(m_select_and_delete,
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings = <&macro_press &mo l_nav1 &kp LSHFT>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LSHFT &mo l_nav1>
-                , <&macro_tap &kp BACKSPACE>;
-)
 
 MY_MACRO(m_pair_par,    <&kp FR_LPAR &kp FR_RPAR &kp LEFT >)
 MY_MACRO(m_pair_bkt,    <&kp FR_LBKT &kp FR_RBKT &kp LEFT>)
@@ -22,12 +14,20 @@ MY_MACRO(m_pair_brc,    <&kp FR_LBRC &kp FR_RBRC &kp LEFT>)
 #define REPL(NAME, BEH) MY_MACRO(NAME, <&kp BSPC BEH>)
 REPL(nk,	&kp FR_N &kp FR_K)
 REPL(kn,	&kp FR_K &kp FR_N)
+REPL(ae,	&kp FR_E_ACUTE &kp FR_E)
 REPL(z,		&kp FR_Z)
 REPL(v,		&kp FR_V)
 REPL(j,		&kp FR_J)
 REPL(k,		&kp FR_K)
+REPL(ij,	&kp FR_I &kp FR_J)
 REPL(cedilla,	&kp FR_C_CEDILLA)
 REPL(bk_qu,	&kp FR_Q &kp FR_U)
+
+REPL(a_grave,		&kp FR_A_GRAVE)
+REPL(e_grave,		&kp FR_E_GRAVE)
+REPL(e_acute,		&kp FR_E_ACUTE)
+REPL(o_hat,		&typeOhat     )
+REPL(u_grave,		&kp FR_U_GRAVE)
 
 MY_MACRO(Qu,    <&kp FR_Q &kp FR_U>)
 MY_MACRO(Sch,   <&kp FR_S &kp FR_C &kp FR_H>)
@@ -40,11 +40,27 @@ MY_MACRO(Sh,    <&kp FR_S &kp FR_H>)
 MY_MACRO(sion,  <&kp FR_S &kp FR_I &kp FR_O &kp FR_N>)
 MY_MACRO(Gh,    <&kp FR_G &kp FR_H>)
 MY_MACRO(ght,   <&kp FR_G &kp FR_H &kp FR_T>)
-MY_MACRO(Ph,    <&kp FR_P &kp FR_H>)
-MY_MACRO(Gu,    <&kp FR_G &kp FR_U>)
+//MY_MACRO(Ph,    <&kp FR_P &kp FR_H>)
+
+MY_MACRO(triple_apos,   <&kp FR_APOS &kp FR_APOS>)
+MY_MACRO(triple_double_quote,   <&kp FR_DOUBLE_QUOTES &kp FR_DOUBLE_QUOTES>)
+
+MY_MACRO(ion,   <&kp FR_I &kp FR_O &kp FR_N>)
+MY_MACRO(tte,   <&kp FR_T &kp FR_T &kp FR_E>)
+MY_MACRO(ent,   <&kp FR_E &kp FR_N &kp FR_T>)
+
 
 MY_MACRO(typeAhat,<&kp FR_CARET &kp FR_A>)
 MY_MACRO(typeEhat,<&kp FR_CARET &kp FR_E>)
 MY_MACRO(typeIhat,<&kp FR_CARET &kp FR_I>)
 MY_MACRO(typeOhat,<&kp FR_CARET &kp FR_O>)
 MY_MACRO(typeUhat,<&kp FR_CARET &kp FR_U>)
+
+ZMK_MACRO(m_select_and_delete,
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <&macro_press &mo l_mouse &kp LSHFT>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LSHFT &mo l_mouse>
+                , <&macro_tap &kp BACKSPACE>;
+)
