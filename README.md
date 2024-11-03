@@ -13,7 +13,7 @@ The consonant side is more different.
 - Thanks to putting `D` on the home row, it is possible to have many bigrams and trigrams as rolls: `STR,SCR,NDR,MPL,MPT,MPR,XPL,XPR,NTL,NCL,NGL,SCL,RCL` (some of them using the adaptive key described just below).
 - there are some adaptive keys too: `GC/GL,CG/CL,TD/TL,LX/LT,FG/FL`.
 - There is a sticky shift key `*` that is
-  - an adaptive key, because I use it mainly to capitalize letters after a space, so I can assign this key to something different when typed after a letter: `T*TH/S*/SH,G*GH/,C*/CH,W*/WH,A*/à,E*/è,I*/é,U*/ù,O*/ô,Y*/IJ`. Note that combos could be used for the H digraphs. 
+  - an adaptive key, because I use it mainly to capitalize letters after a space, so I can assign this key to something different when typed after a letter: `T*/TH,S*/SH,G*GH/,C*/CH,W*/WH,A*/à,E*/è,I*/é,U*/ù,O*/ô,Y*/IJ`. Note that combos could be used for the H digraphs. 
   - sticky shift on tap by default
   - caps word on double tap
 - some known limitations: `WS,SW,NF` bigrams and `Qu'` trigram.
