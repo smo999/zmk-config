@@ -16,6 +16,7 @@ The consonant side is more different.
   - an adaptive key, because I use it mainly to capitalize letters after a space, so I can assign this key to something different when typed after a letter: `T*TH/S*/SH,G*GH/,C*/CH,W*/WH,A*/à,E*/è,I*/é,U*/ù,O*/ô,Y*/IJ`. Note that combos could be used for the H digraphs. 
   - sticky shift on tap by default
   - caps word on double tap
+- some known limitations: `WS,SW,NF` bigrams and `Qu'` trigram.
 
 
   
