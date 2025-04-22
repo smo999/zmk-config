@@ -26,5 +26,4 @@
 #define	l_mouse		5
 #define	l_nav		6
 #define	l_conf		7
-#define	l_mbl		8
 		

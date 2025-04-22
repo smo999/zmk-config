@@ -6,17 +6,15 @@
     MAKE_HRM(hmc,&kp, &kp,  KEYS_V THUMBS)
     MAKE_HRM(hmv,&kp, &kp,  KEYS_C THUMBS)
 
+    MAKE_HRM(ltm, &mo, &kp,  KEYS_C KEYS_V THUMBS)
+
+
     MAKE_HRM_NAV(hmr_nav, &kp, &kp,  KEYS_R THUMBS)
 
     MAKE_HRM(hrm_e, &kp, &ak_e,  KEYS_C THUMBS)
 
-    MAKE_HRM(hrm_d, &kp, &ak_d,  KEYS_V THUMBS)
-    MAKE_HRM(hrm_t, &kp, &kp,    KEYS_V THUMBS)
-    MAKE_HRM(hrm_s, &kp, &kp,    KEYS_V THUMBS)
-    MAKE_HRM(hrm_h, &mo, &ak_h,  KEYS_C THUMBS)
-
     MAKE_LK(lk,    &kp,&kp)
-    MAKE_LK(lk_qu, &kp, &Qu)
+    MAKE_LK(lk_qu, &Qu_apos, &Qu)
     MAKE_LK(lk_ch, &Ch, &kp)
     MAKE_LK(lk_th, &tion, &Th)
     MAKE_LK(lk_sh, &sion, &Sh)
@@ -25,7 +23,7 @@
     MAKE_SHIFT_MORPH(aug_sym, &sl l_aug, &tog l_mouse)
     MAKE_SHIFT_MORPH(shift_capsword, &ak_magic, &caps_word)
     MAKE_SHIFT_MORPH(CmmaSemi, &kp FR_COMMA, &kp FR_SEMICOLON)
-    MAKE_SHIFT_MORPH(DotColn, &ak_dot, &kp FR_COLON)
+    MAKE_SHIFT_MORPH(DotColn, &kp FR_DOT, &kp FR_COLON)
     MAKE_SHIFT_MORPH(HashDllr, &kp FR_HASH, &kp FR_DLLR)
     MAKE_SHIFT_MORPH(MinusPlus, &kp FR_MINUS, &kp FR_PLUS)
     MAKE_SHIFT_MORPH(apos_quotes, &kp FR_APOS, &kp FR_DOUBLE_QUOTES)
@@ -40,14 +38,15 @@
 
     #define VIRG ,
     
+        //<&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H>  VIRG <&kp FR_H> VIRG
+        // <FR_T  FR_S FR_G FR_P FR_W FR_C
+
     MAKE_AK(ak_magic, &sk LSHIFT, 
-        <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H>  VIRG <&kp FR_H> 
-        VIRG <&cedilla> VIRG <&a_grave> VIRG <&e_acute> VIRG <&e_grave> VIRG <&o_hat> VIRG <&u_grave>
+        <&cedilla> VIRG <&a_grave> VIRG <&e_acute> VIRG <&e_grave> VIRG <&o_hat> VIRG <&u_grave>
         VIRG <&ij> VIRG <&kp FR_L>
         VIRG <&triple_apos> VIRG <&triple_double_quote>
         VIRG <&sk LSHIFT>,
-        <FR_T  FR_S FR_G FR_P FR_W FR_C
-         FR_COMMA FR_A FR_I FR_E FR_O FR_U
+         <FR_COMMA FR_A FR_I FR_E FR_O FR_U
          FR_Y FR_L
          FR_APOS FR_DOUBLE_QUOTES
          SPACE
@@ -57,33 +56,17 @@
         <&ion> VIRG <&ion> VIRG <&ion> VIRG <&ent> VIRG <&ent> VIRG <&tte>,
         <FR_S FR_T FR_N FR_M FR_I FR_E>
     )
-    MAKE_LK(lk_magic2, &mo, &ak_magic2, hold-trigger-key-positions = <RB1 RB2 RB3>; )
-
-    ZMK_HOLD_TAP(ht_mbl, 
-        flavor = "hold-preferred"; 
-        tapping-term-ms = <280>;
-        bindings = <&mo>, <&ak_magic>; 
-        hold-trigger-key-positions = <RB1 RB2 RB3>; 
-    )
-
-    ZMK_HOLD_TAP(apos_mbl, 
-        flavor = "hold-preferred"; 
-        tapping-term-ms = <280>;
-        bindings = <&mo>, <&ak_h>; 
-        hold-trigger-key-positions = <RB1 RB2 RB3>; 
-    )
-
-    MAKE_AK(ak_x, &kp FR_X, <&kp FR_T>, <FR_L>)
+    
     MAKE_AK(ak_e, &kp FR_E, <&ae>, <FR_A>)
-    MAKE_AK(ak_g, &kp FR_G, <&kp FR_L> VIRG <&kp FR_L>, <FR_C FR_F>)
-    MAKE_AK(ak_c, &lk_ch FR_H FR_C, <&kp FR_L>, <FR_G>)
-    MAKE_AK(ak_d, &kp FR_D, <&kp FR_L>, <FR_T>)
-    MAKE_AK(ak_h, &apos_quotes, 
-        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&kp FR_O> VIRG < &kp FR_E> VIRG < &kp FR_U>, 
-        <FR_A FR_U  FR_E FR_O FR_I>)
 
-    MAKE_AK(ak_comma, &CmmaSemi, <&cedilla> VIRG <&kp FR_Y>, <FR_C FR_APOS>)
-    MAKE_AK(ak_dot, &kp FR_DOT, <&kp FR_O>, <FR_APOS>)
+    MAKE_AK(ak_g, &kp FR_G, <&kp FR_H>, <FR_C>)
+    MAKE_AK(ak_c, &kp FR_C, <&kp FR_H>, <FR_G>)
+    MAKE_AK(ak_m, &kp FR_M, <&kp FR_H>, <FR_P>)
+    MAKE_AK(ak_d, &kp FR_D, <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H>, <FR_T FR_S FR_W FR_G >)
+
+    MAKE_AK(ak_apos, &apos_quotes, 
+        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&e_acute> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG <&kp FR_A>, 
+        <FR_A FR_U  FR_E FR_O FR_I FR_Y>)
 
     ZMK_HOLD_TAP(space_delete,  
         tapping-term-ms = <my_tapping_term>;

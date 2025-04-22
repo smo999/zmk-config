@@ -5,10 +5,10 @@
         l_alpha {											
             display-name = "HD-Vb";							
             bindings = <	
-                INVERT(&kp FR_W,	&kp FR_F,	&ak_c,	&ak_g,	&kp FR_K, &kp RIGHT,	&kp BACKSPACE,	&DotColn,	&ak_comma,	&Qu)
-                INVERT(&hrm_s LCTRL FR_S,	&hmc LALT FR_N,	&hrm_d LSHFT FR_D,   &hrm_t LGUI T,	&kp FR_V,	&kp ENTER,	&hmv RGUI FR_I,	&hrm_e RSHFT FR_E,	&hmv RALT FR_A,	&apos_mbl l_mbl 0)
-        INVERT(&ak_x,	&kp FR_M,	&kp FR_P,	&kp FR_L,	&kp FR_B,	&MinusPlus,	&kp FR_U,	&kp FR_O,	&kp FR_Y, &lk_magic2 l_mbl 0)
-                           &slmo l_sym l_sym	&tt l_mouse SPACE	&lt l_nav FR_R	&shift_capsword
+                INVERT(&kp FR_W,	&kp FR_F,	&ak_c,	&ak_g,	&kp FR_K, &kp RIGHT,	&DotColn,	&kp BACKSPACE,	&kp FR_COMMA,	&Qu)
+                INVERT(&hmc LCTRL FR_S,	&hmc LALT FR_N,	&ak_d,   &hmc LGUI T,	&kp FR_V,	&kp ENTER,	&hmv RGUI FR_I,	&hrm_e RSHFT FR_E,	&hmv RALT FR_A,	&ak_apos)
+                INVERT(&kp FR_X,	&kp FR_B,	&kp FR_P,	&ak_m,	&kp FR_H,	&MinusPlus,	&kp FR_U,	&kp FR_O,	&kp FR_Y, &ak_magic2)
+                                &shift_capsword   	&ltm l_mouse SPACE	&ltm l_nav FR_R	&ltm l_sym FR_L  // &slmo l_sym l_sym
             >;											
         };
 
@@ -44,10 +44,10 @@
         Numbers {
             display-name = "l_num";
             bindings = <
-                ______	&kp FR_COMMA	&kp FR_DOT	&m_pair_par	______	______	______	______	______	______	
+                ______	&kp FR_COMMA		______ &kp FR_DOT	______	______	&kp FR_RIGHT_PARENTHESIS	______	______	______	
                 &kp FR_N3    &kp FR_N2    &kp FR_N1     &kp FR_N0    &kp FR_N4    &kp FR_N9    &kp FR_N5    &kp FR_N6    &kp FR_N7    &kp FR_N8
-                ______	______	______	______	______	______	______	______	______	______	
-                                        ______	______	&to l_alpha	&kp LEFT
+                &kp FR_DLLR	&kp FR_MINUS	&kp FR_PLUS	&kp FR_EQUAL	&kp FR_LESS_THAN	&kp FR_GREATER_THAN	&kp FR_SLASH	______	______	&kp FR_ASTERISK	
+                                        &to l_alpha	&lt l_mouse SPACE	&mo l_nav	&slmo l_sym l_sym
             >;
         };
 
@@ -55,38 +55,28 @@
         Mouse {     // sticky
             display-name = "l_mouse";
             bindings = <
-                &kp ESCAPE	&kp HYPER(TAB)	&kp META(TAB)	______	&kp LG(LS(SPACE))	            &kp FR_N9     &kp FR_N5  	&kp FR_N6   &kp FR_N7	&kp FR_N8                                             
-                &kp LG(FR_A)	&kp LS(TAB)	&kp TAB   &kp LG(SPACE) ______                          &kp FR_N4	    &kp FR_N0	&kp FR_N1	&kp FR_N2	&kp FR_N3 
-                &kp LG(FR_Z)	&kp LG(FR_X)	&kp LG(FR_C)	&kp LG(FR_V)	&kp LS(LG(FR_V))    &kp FR_EQUAL	 &kp FR_SLASH	&kp FR_PLUS	&kp FR_MINUS	&kp FR_ASTERISK  
-                            ______	&tog l_mouse	&to l_alpha	______
+                &kp ESCAPE	&kp HYPER(TAB)	&kp META(TAB)	______	&kp LG(LS(SPACE))	            &kp LG(LA(LC(FR_A))) &kp LG(LA(LC(FR_B))) &kp LG(LA(LC(FR_C))) &kp LG(LA(LC(FR_D))) &kp LG(LA(LC(FR_E))) 
+                &kp LG(FR_A)	&kp LS(TAB)	&kp TAB   &kp LG(SPACE) ______                          &kp LG(LA(LC(FR_F))) &kp LG(LA(LC(FR_G))) &kp LG(LA(LC(FR_H))) &kp LG(LA(LC(FR_I))) &kp LG(LA(LC(FR_J))) 
+                &kp LG(FR_Z)	&kp LG(FR_X)	&kp LG(FR_C)	&kp LG(FR_V)	&kp LS(LG(FR_V))    &kp LG(LA(LC(FR_K))) &kp LG(LA(LC(FR_L))) &kp LG(LA(LC(FR_M))) &kp LG(LA(LC(FR_N))) &kp LG(LA(LC(FR_O))) 
+                            &to l_alpha	&tog l_mouse	&to l_alpha	______
             >;
         };
 
-        Nav {       // Toogle
+        Nav {            // Toggle
             bindings = <
                 &kp ESCAPE	______	______	______	______	                     ______	______	&kp UP	    ______	______	 
-                &kp LCTRL   &hmr_nav LALT HYPER(TAB)	&hmr_nav LSHIFT META(TAB)	&hmr_nav LGUI LG(SPACE)	______	 ______	&kp LEFT	&kp DOWN	&kp RIGHT	______	
-                ______	______	______	&kp LG(LS(SPACE))	______	             ______	______	&kp FR_B	______	______	       	
-                                ______	______	&m_select_and_delete	______	
+                &kp LCTRL   &hmr_nav LALT LS(TAB)	&hmr_nav LSHIFT TAB	&hmr_nav LGUI SPACE	&kp ENTER	 ______	&kp LEFT	&kp DOWN	&kp RIGHT	______	
+                ______	______	______	______	______	             ______	______	&kp FR_B	______	______	       	
+                                ______	______	&to l_alpha	______	
             >;
         };
 
         Config {
             bindings = <
                 &bootloader	&bt BT_DISC 0	&bt BT_DISC 1	&bt BT_DISC 2	&bt BT_DISC 3	______	______	______	______	______
-                ______	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	______	______	______	______	______
+                &studio_unlock	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	______	______	______	______	______
                 ______	&bt BT_CLR	______	______	______	______	______	______	______	______
-                            ______	&to 0	&to 0	______
-            >;
-
-        };
-
-        MBL {
-            bindings = <
-                ______	______	______	______	______  ______	______	______	______	______  
-                ______	______	______	______	______  ______	______	______	______	______  
-                ______	______	______	______	______  ______	______	&kp FR_B	______	______  
-                                        ______	______	______	______
+                            ______	______	&to l_alpha	______
             >;
 
         };

@@ -21,10 +21,9 @@
 
 #define my_tapping_term 170
 #define my_quick_tapping_term 112
-#define my_ak_delay 500
+#define my_ak_delay 1000
 
 &lt {
-    flavor = "balanced";
     tapping-term-ms = <150>;
     retro-tap;
 };
@@ -43,7 +42,7 @@
 };
 
 &caps_word {
-    continue-list = <LGUI LEFT RIGHT FR_M LSHIFT FR_UNDERSCORE FR_MINUS DELETE BACKSPACE>;
+    continue-list = <LGUI LEFT RIGHT FR_M FR_UNDERSCORE FR_MINUS DELETE BACKSPACE>;
 };
 
 #include "my_helpers.dtsi"
