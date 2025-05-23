@@ -5,9 +5,9 @@
         l_alpha {											
             display-name = "HD-Vb";							
             bindings = <	
-                INVERT(&kp FR_W,	&kp FR_F,	&ak_c,	&ak_g,	&kp FR_K, &kp RIGHT,	&DotColn,	&kp BACKSPACE,	&kp FR_COMMA,	&Qu)
-                INVERT(&hmc LCTRL FR_S,	&hmc LALT FR_N,	&ak_d,   &hmc LGUI T,	&kp FR_V,	&kp ENTER,	&hmv RGUI FR_I,	&hrm_e RSHFT FR_E,	&hmv RALT FR_A,	&ak_apos)
-                INVERT(&kp FR_X,	&kp FR_B,	&kp FR_P,	&ak_m,	&kp FR_H,	&MinusPlus,	&kp FR_U,	&kp FR_O,	&kp FR_Y, &ak_magic2)
+                INVERT(&kp FR_W,	&kp FR_F,	&ak_c,	&ak_g,	&kp FR_K, &kp RIGHT,	&DotColn,	&kp BACKSPACE,	&kp FR_COMMA,	&lk_qu FR_Q 0)
+                INVERT(&kp FR_S,	&kp FR_N,	&hmc LGUI T, &ak_d,   &kp FR_V,	&kp ENTER,	&hmv RGUI FR_I,	&hrm_e RSHFT FR_E,	&hmv RALT FR_A,	&ak_apos)
+                INVERT(&kp FR_X,	&kp FR_B,&ak_m,		&kp FR_P, 	&kp FR_H,	&MinusPlus,	&kp FR_U,	&kp FR_O,	&kp FR_Y, &ak_magic2)
                                 &shift_capsword   	&ltm l_mouse SPACE	&ltm l_nav FR_R	&ltm l_sym FR_L  // &slmo l_sym l_sym
             >;											
         };

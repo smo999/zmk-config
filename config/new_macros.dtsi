@@ -5,6 +5,7 @@
                 tap-ms = <0>;\
                 bindings = __VA_ARGS__; \
         )
+
 #define MY_MACRO2(NAME, ...) \
         ZMK_MACRO(NAME, \
                 wait-ms = <0>;\
@@ -12,12 +13,12 @@
                 bindings = __VA_ARGS__; \
         )
 
+#define REPL(NAME, BEH) MY_MACRO(NAME, <&kp BSPC BEH>)
 
 MY_MACRO(m_pair_par,    <&kp FR_LPAR &kp FR_RPAR &kp LEFT >)
 MY_MACRO(m_pair_bkt,    <&kp FR_LBKT &kp FR_RBKT &kp LEFT>)
 MY_MACRO(m_pair_brc,    <&kp FR_LBRC &kp FR_RBRC &kp LEFT>)
 
-#define REPL(NAME, BEH) MY_MACRO(NAME, <&kp BSPC BEH>)
 REPL(nk,	&kp FR_N &kp FR_K)
 REPL(kn,	&kp FR_K &kp FR_N)
 REPL(ae,	&kp FR_E_ACUTE &kp FR_E)
@@ -35,7 +36,7 @@ REPL(e_acute,		&kp FR_E_ACUTE)
 REPL(o_hat,		&typeOhat     )
 REPL(u_grave,		&kp FR_U_GRAVE)
 
-MY_MACRO2(Qu,    <&kp FR_Q &kp FR_U>)
+MY_MACRO(Qu,    <&kp FR_Q &kp FR_U>)
 MY_MACRO(Qu_apos,    <&kp FR_Q &kp FR_U &kp FR_APOS>)
 MY_MACRO(Sch,   <&kp FR_S &kp FR_C &kp FR_H>)
 MY_MACRO(Tch,   <&kp FR_T &kp FR_C &kp FR_H>)

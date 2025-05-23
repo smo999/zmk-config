@@ -9,7 +9,7 @@
     MAKE_HRM(ltm, &mo, &kp,  KEYS_C KEYS_V THUMBS)
 
 
-    MAKE_HRM_NAV(hmr_nav, &kp, &kp,  KEYS_R THUMBS)
+    MAKE_HRM_NAV(hmr_nav, &kp, &kp,  KEYS_V KEYS_C THUMBS)
 
     MAKE_HRM(hrm_e, &kp, &ak_e,  KEYS_C THUMBS)
 
@@ -19,6 +19,7 @@
     MAKE_LK(lk_th, &tion, &Th)
     MAKE_LK(lk_sh, &sion, &Sh)
     MAKE_LK(lk_gh, &ght, &Gh)
+    MAKE_LK(lk_qu, &kp, &Qu)
 
     MAKE_SHIFT_MORPH(aug_sym, &sl l_aug, &tog l_mouse)
     MAKE_SHIFT_MORPH(shift_capsword, &ak_magic, &caps_word)
@@ -42,19 +43,15 @@
         // <FR_T  FR_S FR_G FR_P FR_W FR_C
 
     MAKE_AK(ak_magic, &sk LSHIFT, 
-        <&cedilla> VIRG <&a_grave> VIRG <&e_acute> VIRG <&e_grave> VIRG <&o_hat> VIRG <&u_grave>
-        VIRG <&ij> VIRG <&kp FR_L>
-        VIRG <&triple_apos> VIRG <&triple_double_quote>
-        VIRG <&sk LSHIFT>,
-         <FR_COMMA FR_A FR_I FR_E FR_O FR_U
-         FR_Y FR_L
-         FR_APOS FR_DOUBLE_QUOTES
-         SPACE
+        <&triple_apos> VIRG <&triple_double_quote>,
+         <FR_APOS FR_DOUBLE_QUOTES
          >)
 
     MAKE_AK(ak_magic2, &kp FR_H, 
-        <&ion> VIRG <&ion> VIRG <&ion> VIRG <&ent> VIRG <&ent> VIRG <&tte>,
-        <FR_S FR_T FR_N FR_M FR_I FR_E>
+        <&kp FR_C_CEDILLA> VIRG <&ion> VIRG <&ion> VIRG <&ion> VIRG <&ion> VIRG <&ent> 
+        VIRG <&cedilla> VIRG <&a_grave> VIRG <&e_acute> VIRG <&e_grave> VIRG <&u_grave>,
+        <FR_C FR_X FR_S FR_T FR_N FR_M 
+        FR_COMMA FR_A FR_I FR_E FR_U>
     )
     
     MAKE_AK(ak_e, &kp FR_E, <&ae>, <FR_A>)
@@ -100,3 +97,5 @@
         tapping-term-ms = <200>;
         flavor = "tap-preferred";
     )
+
+
