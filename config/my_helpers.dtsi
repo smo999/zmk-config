@@ -31,9 +31,10 @@
 
 #define MAKE_LK(NAME, HOLD, TAP, ...) \
     ZMK_HOLD_TAP(NAME, \
-        tapping-term-ms = <my_tapping_term>; \
+        tapping-term-ms = <300>; \
         flavor = "tap-preferred"; \
         bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <>; \
         __VA_ARGS__ \
     )
 

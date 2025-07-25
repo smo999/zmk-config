@@ -15,9 +15,9 @@
 
 #define REPL(NAME, BEH) MY_MACRO(NAME, <&kp BSPC BEH>)
 
-MY_MACRO(m_pair_par,    <&kp FR_LPAR &kp FR_RPAR &kp LEFT >)
-MY_MACRO(m_pair_bkt,    <&kp FR_LBKT &kp FR_RBKT &kp LEFT>)
-MY_MACRO(m_pair_brc,    <&kp FR_LBRC &kp FR_RBRC &kp LEFT>)
+MY_MACRO(m_pair_par,    <&kp FR_LPAR >)  //&kp FR_RPAR &kp LEFT >)
+MY_MACRO(m_pair_bkt,    <&kp FR_LBKT >)  //&kp FR_RBKT &kp LEFT>)
+MY_MACRO(m_pair_brc,    <&kp FR_LBRC >)  // &kp FR_RBRC &kp LEFT>)
 
 REPL(nk,	&kp FR_N &kp FR_K)
 REPL(kn,	&kp FR_K &kp FR_N)

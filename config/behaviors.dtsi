@@ -12,6 +12,7 @@
     MAKE_HRM_NAV(hmr_nav, &kp, &kp,  KEYS_V KEYS_C THUMBS)
 
     MAKE_HRM(hrm_e, &kp, &ak_e,  KEYS_C THUMBS)
+    MAKE_HRM(hrm_apos, &kp, &ak_apos,  KEYS_C THUMBS)
 
     MAKE_LK(lk,    &kp,&kp)
     MAKE_LK(lk_qu, &Qu_apos, &Qu)
@@ -21,26 +22,18 @@
     MAKE_LK(lk_gh, &ght, &Gh)
     MAKE_LK(lk_qu, &kp, &Qu)
 
-    MAKE_SHIFT_MORPH(aug_sym, &sl l_aug, &tog l_mouse)
-    MAKE_SHIFT_MORPH(shift_capsword, &ak_magic, &caps_word)
+    MAKE_SHIFT_MORPH(shift_capsword, &sk LSHIFT, &caps_word)
     MAKE_SHIFT_MORPH(CmmaSemi, &kp FR_COMMA, &kp FR_SEMICOLON)
     MAKE_SHIFT_MORPH(DotColn, &kp FR_DOT, &kp FR_COLON)
-    MAKE_SHIFT_MORPH(HashDllr, &kp FR_HASH, &kp FR_DLLR)
-    MAKE_SHIFT_MORPH(MinusPlus, &kp FR_MINUS, &kp FR_PLUS)
     MAKE_SHIFT_MORPH(apos_quotes, &kp FR_APOS, &kp FR_DOUBLE_QUOTES)
-    MAKE_SHIFT_MORPH(question_excl, &kp FR_QUESTION, &kp FR_EXCL)
 
     MAKE_SHIFT_MORPH(caret_trema, &kp FR_CARET, &kp FR_UMLAUT)
-    MAKE_SHIFT_MORPH(grave_tilde, &kp FR_TILDE, &kp FR_GRAVE)
 
     MAKE_SHIFT_MORPH(pair_par, &m_pair_par , &kp FR_LPAR)
     MAKE_SHIFT_MORPH(pair_brc, &m_pair_brc , &kp FR_LBRC)
     MAKE_SHIFT_MORPH(pair_bkt, &m_pair_bkt , &kp FR_LBKT)
 
     #define VIRG ,
-    
-        //<&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H>  VIRG <&kp FR_H> VIRG
-        // <FR_T  FR_S FR_G FR_P FR_W FR_C
 
     MAKE_AK(ak_magic, &sk LSHIFT, 
         <&triple_apos> VIRG <&triple_double_quote>,
@@ -62,8 +55,8 @@
     MAKE_AK(ak_d, &kp FR_D, <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H> VIRG <&kp FR_H>, <FR_T FR_S FR_W FR_G >)
 
     MAKE_AK(ak_apos, &apos_quotes, 
-        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&e_acute> VIRG < &kp FR_E> VIRG < &kp FR_U> VIRG <&kp FR_A>, 
-        <FR_A FR_U  FR_E FR_O FR_I FR_Y>)
+        <&kp FR_Y> VIRG < &kp FR_I> VIRG <&e_acute> VIRG < &kp FR_E> VIRG < &kp FR_O> VIRG <&kp FR_A>, 
+        <FR_A FR_O  FR_E FR_U FR_I FR_Y>)
 
     ZMK_HOLD_TAP(space_delete,  
         tapping-term-ms = <my_tapping_term>;

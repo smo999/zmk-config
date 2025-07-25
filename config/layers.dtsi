@@ -5,54 +5,35 @@
         l_alpha {											
             display-name = "HD-Vb";							
             bindings = <	
-                INVERT(&kp FR_W,	&kp FR_F,	&ak_c,	&ak_g,	&kp FR_K, &kp RIGHT,	&DotColn,	&kp BACKSPACE,	&kp FR_COMMA,	&lk_qu FR_Q 0)
-                INVERT(&kp FR_S,	&kp FR_N,	&hmc LGUI T, &ak_d,   &kp FR_V,	&kp ENTER,	&hmv RGUI FR_I,	&hrm_e RSHFT FR_E,	&hmv RALT FR_A,	&ak_apos)
-                INVERT(&kp FR_X,	&kp FR_B,&ak_m,		&kp FR_P, 	&kp FR_H,	&MinusPlus,	&kp FR_U,	&kp FR_O,	&kp FR_Y, &ak_magic2)
-                                &shift_capsword   	&ltm l_mouse SPACE	&ltm l_nav FR_R	&ltm l_sym FR_L  // &slmo l_sym l_sym
+                &lk_qu FR_Q 0	&CmmaSemi	&kp BACKSPACE	&DotColn	&kp RIGHT	&kp FR_K 	&ak_g	&ak_c	&kp FR_F &kp FR_W
+                &hrm_apos RCTRL 0	&hmv RALT FR_A	&hrm_e RGUI FR_E	&hmv RSHFT FR_I	&kp ENTER	 &kp FR_V	&ak_d  	&hmc LGUI T 	&hmc RALT FR_N    &kp FR_S
+                &ak_magic2	&kp FR_Y 	&kp FR_U	&kp FR_O	&tog l_num	&kp FR_H	&kp FR_P 	&ak_m	&kp FR_B    &ltm l_sym FR_X
+                                &shift_capsword   	&ltm l_mouse SPACE	&ltm l_nav FR_R	&ltm l_sym FR_L  
             >;											
         };
-
-        Shifted{
-            display-name = "Shift";										
-            bindings = <
-                INVERT(&kp LS(FR_W),	&kp LS(FR_F),	&kp LS(FR_C),	&kp LS(FR_G),	&kp LS(FR_K),	______,     ______,         ______,         ______,         &kp LS(FR_J))
-                INVERT(&kp LS(FR_S),	&kp LS(FR_N),	&kp LS(FR_D),	&kp LS(FR_T),	&kp LS(FR_V),	______,     &kp LS(FR_I),	&kp LS(FR_E),	&kp LS(FR_A),	&kp FR_APOS)
-                INVERT(&kp LS(FR_X),	&kp LS(FR_M),	&kp LS(FR_P),	&kp LS(FR_L),	&kp LS(FR_B),	______, 	&kp LS(FR_U),	&kp LS(FR_O),	&kp LS(FR_Y),	______)
-                                                                        &caps_word	    &none	        &kp LS(FR_R) &slmo l_sym l_sym
-            >;	
-        };
-
-        Augmented {       // Toogle
-            bindings = <
-                &grave_tilde	&kp FR_C_CEDILLA	______	______	______	______	______	&Ch	______	&Wh
-                &caret_trema	&kp FR_A_GRAVE	&kp FR_E_ACUTE	&kp FR_E_GRAVE	______	______	______	______  &kp FR_Z	______
-                ______	______	&typeOhat	&kp FR_U_GRAVE	______	______	______	______	&kp FR_EURO	&kp FR_DOLLAR
-                                        &slmo l_sym l_sym	&tog l_nav	&to l_alpha	______	
-            >;
-        };
 	
-        Symbols {       // mo and sticky  
+        Symbols {    
             display-name = "l_sym";
             bindings = <
-                &kp FR_GRAVE	&pair_bkt	&pair_brc	&m_pair_par	______	______	&kp FR_RIGHT_PARENTHESIS	&kp FR_RIGHT_BRACE	&kp FR_RIGHT_BRACKET	&kp FR_ASTERISK
-                &kp FR_DLLR     &kp FR_UNDER	&kp FR_MINUS	&kp FR_EQUAL	&kp FR_LESS_THAN	&kp FR_GREATER_THAN	&kp FR_SLASH	&kp FR_PIPE	&kp FR_BACKSLASH	&kp FR_AT	
-                &kp FR_EURO     &kp FR_EXCL	&kp FR_PLUS	&kp FR_HASH	&kp FR_PERCENT	&kp FR_TILDE	&kp FR_PERCENT	&kp FR_CARET	&kp FR_QUESTION	&kp FR_AMPS
+                &kp FR_AT	&pair_bkt	&pair_brc	&m_pair_par	______	______	&kp FR_RIGHT_PARENTHESIS	&kp FR_RIGHT_BRACE	&kp FR_RIGHT_BRACKET	&kp FR_ASTERISK
+                &kp FR_LESS_THAN     &kp FR_MINUS	&kp FR_EQUAL	&kp FR_GREATER_THAN	&kp FR_GRAVE	&kp FR_UNDERSCORE &kp FR_SLASH	&kp FR_PIPE	&kp FR_BACKSLASH	&kp FR_DOLLAR	
+                &kp FR_AMPS     &kp FR_EXCL	&kp FR_PLUS	&kp FR_HASH	&kp FR_PERCENT	&kp FR_TILDE	&kp FR_PERCENT	&kp FR_CARET	&kp FR_QUESTION	&kp FR_EURO
                             ______	&tog l_num	&to l_alpha	______
             >;
         };
-        
+
         Numbers {
             display-name = "l_num";
             bindings = <
                 ______	&kp FR_COMMA		______ &kp FR_DOT	______	______	&kp FR_RIGHT_PARENTHESIS	______	______	______	
                 &kp FR_N3    &kp FR_N2    &kp FR_N1     &kp FR_N0    &kp FR_N4    &kp FR_N9    &kp FR_N5    &kp FR_N6    &kp FR_N7    &kp FR_N8
                 &kp FR_DLLR	&kp FR_MINUS	&kp FR_PLUS	&kp FR_EQUAL	&kp FR_LESS_THAN	&kp FR_GREATER_THAN	&kp FR_SLASH	______	______	&kp FR_ASTERISK	
-                                        &to l_alpha	&lt l_mouse SPACE	&mo l_nav	&slmo l_sym l_sym
+                                        &to l_alpha	&lt l_mouse SPACE	&mo l_nav	&mo l_sym
             >;
         };
 
 
-        Mouse {     // sticky
+        Mouse {    
             display-name = "l_mouse";
             bindings = <
                 &kp ESCAPE	&kp HYPER(TAB)	&kp META(TAB)	______	&kp LG(LS(SPACE))	            &kp LG(LA(LC(FR_A))) &kp LG(LA(LC(FR_B))) &kp LG(LA(LC(FR_C))) &kp LG(LA(LC(FR_D))) &kp LG(LA(LC(FR_E))) 
@@ -65,7 +46,7 @@
         Nav {            // Toggle
             bindings = <
                 &kp ESCAPE	______	______	______	______	                     ______	______	&kp UP	    ______	______	 
-                &kp LCTRL   &hmr_nav LALT LS(TAB)	&hmr_nav LSHIFT TAB	&hmr_nav LGUI SPACE	&kp ENTER	 ______	&kp LEFT	&kp DOWN	&kp RIGHT	______	
+                &kp LCTRL   &hmr_nav LALT LS(TAB)	&hmr_nav LGUI TAB	&hmr_nav LSHIFT SPACE	&kp ENTER	 ______	&kp LEFT	&kp DOWN	&kp RIGHT	______	
                 ______	______	______	______	______	             ______	______	&kp FR_B	______	______	       	
                                 ______	______	&to l_alpha	______	
             >;
@@ -76,7 +57,7 @@
                 &bootloader	&bt BT_DISC 0	&bt BT_DISC 1	&bt BT_DISC 2	&bt BT_DISC 3	______	______	______	______	______
                 &studio_unlock	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	______	______	______	______	______
                 ______	&bt BT_CLR	______	______	______	______	______	______	______	______
-                            ______	______	&to l_alpha	______
+                            &kp C_BRI_DN	&kp C_BRI_INC   &to l_alpha	______
             >;
 
         };

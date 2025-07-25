@@ -51,12 +51,10 @@
 #define THUMBS LH0 LH1 RH1 RH0                                      // thumb keys
 
 // my layers
-#define	l_alpha		0
-#define	l_shifted	1
-#define	l_aug		2
-#define	l_sym		3
-#define	l_num		4
-#define	l_mouse		5
-#define	l_nav		6
-#define	l_conf		7
+#define	l_alpha	0
+#define	l_sym	1
+#define	l_num	2
+#define	l_mouse	3
+#define	l_nav	4
+#define	l_conf	5
 		
